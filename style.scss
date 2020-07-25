@@ -1,8 +1,10 @@
+
 $blackish: #272727;
 $darkish: #525252;
 $greyish: #919091;
 $whiteish: #F1F1F1;
 
+$greenish: #3AB865;
 $yellowish: #F4E138;
 $syellish: rgba(244, 225, 56, 0.25);
 $redish: #FF0049;
@@ -16,15 +18,67 @@ $lineOne: 1px solid $blackish;
 $lineTwo: 2px solid $blackish;
 
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-} 
+}
+
 body {
     margin: 0;
     background-color: $whiteish;
 }
 
-/* Metal Sides */
+.section {
+
+    &__one {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10vh 74vh 16vh 80vh 50vh;
+        min-height: 100vh;
+        grid-template-areas:
+            "."
+            "window"
+            "."
+            "paper"
+            "tools";
+        position: relative;
+        margin: 0 6vw;
+    }
+
+    &__two {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20vh 78vh 20vh 78vh 20vh 70vh 20vh;
+        grid-template-areas:
+            "."
+            "sales__one"
+            "."
+            "sales__two"
+            "."
+            "monitor"
+            ".";
+        margin: 0;
+        padding: 0 7vw;
+        background-color: $yellowish;
+        border: $lineTwo;
+        box-shadow: 0 -4px 0px 0px rgba(0, 0, 0, 0.2);
+        position: relative;
+        
+    }
+}
+
+
+
+.window {
+    grid-area: window;
+}
+
+
+
+.tools {
+    grid-area: tools;
+}
 
 .metalside {
     background-color: $greyish;
@@ -32,32 +86,31 @@ body {
     display: inline-block;
     position: fixed;
     margin: 0;
-   
+
 
     &__top {
         width: calc(100vw - 3px);
         height: 10px;
-        box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.2);
-        z-index: 9;
+        box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.2);
+        z-index: 99;
     }
 
-    &__left, &__right {
+    &__left,
+    &__right {
         width: 10px;
         height: 101vh;
-        z-index: 3;
-        z-index: 10;
+        z-index: 100;
     }
 
     &__left {
-        box-shadow: 5px 15px 0px 0px rgba(0,0,0,0.2);
+        box-shadow: 5px 15px 0px 0px rgba(0, 0, 0, 0.2);
     }
 
     &__right {
-        box-shadow: -5px 15px 0px 0px rgba(0,0,0,0.2);
+        box-shadow: -5px 15px 0px 0px rgba(0, 0, 0, 0.2);
         right: 0px;
     }
 }
-
 
 /* Background Lines */
 
@@ -91,316 +144,24 @@ body {
         bottom: 14.5vh;
         left: 30vw;
     }
-  }
-
-/* Window */
-
-.window {
-    background-color: $yellowish;
-    border: $lineTwo;
-    display: inline-block;
-    width: 86vw;
-    height: 74vh;
-    margin: 10vh 7vw 16vh 7vw;
-    padding: 10px;
-    box-shadow: -5px 5px 0px 0px rgba(0,0,0,0.2);
 }
-
-.glass {
-    background-color: $lBlueish;
-    border: $lineTwo;
-    /*opacity:0.3;*/
-    width: 100%;
-    height: 100%;
-}
-
-.lineSkew {
-    border: $lineOne;
-    border-radius: 34%;
-    width: 1px;
-    opacity: 0.3;
-    transform: skew(-30deg);
-    position: absolute;
-    margin: -2px auto auto auto;
-
-    &__one {
-        height: 20px;
-        left: 80vw;
-        right: 20vw;
-    }
-
-    &__two {
-        height: 24px;
-        left: calc(80vw + 3px);
-        right: 20vw;
-    }
-
-    &__three {
-        height: 40px;
-        left: 30vw;
-        right: 70vw;
-        bottom: calc(16vh + 12px);
-    }
-
-    &__four {
-        height: 42px;
-        left: calc(30vw + 5px);
-        right: 70vw;
-        bottom: calc(16vh + 12px);
-    }
-}
-
-
-/* Electric Panel */
-
-.panel {
-    border: $lineTwo;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    right: 0;
-
-    &__back {
-        background-color: $greyish;
-        width: 276px;
-        height: 14px;
-        margin: 10vh auto 0vh 7vw;
-    }
-
-    &__front {
-        background-color: $darkish;
-        width: 100px;
-        height: 20px;
-        margin: calc(10vh - 6px) auto 0vh calc(7vw + 88px);
-        padding-top: 6px;
-    }
-}
-
-.front__line {
-    border: $lineTwo;
-    height: 100%;
-    width: 2px;
-    position: absolute;
-    margin-top: -6px;
-
-    &--left {
-        right: 84%;
-        left: calc(51% - 0px);
-    }
-
-    &--middle {
-        right: 76%;
-        left: calc(51% + 7px);
-    }
-
-    &--right {
-        right: 69%;
-        left: calc(51% + 14px);
-    }
-}
-
-
-.panel__dot {
-    border: $lineTwo;
-    border-radius: 100%;
-    display: inline-block;
-    width: 2px;
-    margin: 3px;
-    position: absolute;
-
-    &--right {
-        right: 0px;
-    }
-}
-
-
-.light {
-    border: $lineTwo;
-    position: absolute;
-    box-shadow: -3px 3px 0px 0px rgba(0,0,0,0.2);
-    width: 14px;
-    height: 18px;
-    border-radius: 6px;
-
-    &--blue {
-        background-color: $blueish;
-        left: 36%;
-        right: 64%;
-    }
-
-    &--red {
-        animation: blinker 2s infinite;
-        background-color: $redish;
-        left: 42%;
-        right: 58%;
-        margin-top: 3px;
-    }
-
-    &--darkred {
-        background-color: $dRedish;
-        left: 42%;
-        right: 58%;
-        margin-top: 3px;
-    }
-}
-
-@keyframes blinker {
-    1% {opacity:1;}
-    50% {opacity:0;}
-  }
-
-.bulb {
-    border: 2px solid $yellowish;
-    background-color: $syellish;
-    position: absolute;
-    box-shadow: -3px 3px 0px 0px rgba(0,0,0,0.2);
-    border-radius: 7px;
-    width: 18px;
-    height: 24px;
-    left: calc(51% - 2px);
-    right: 49%;
-    margin-top: 7px;
-}
-
-.bulb__socket {
-    border: $lineTwo;
-    position: absolute;
-    box-shadow: -3px 2px 0px 0px rgba(0,0,0,0.2);
-    width: 22px;
-    left: calc(51% - 4px);
-    right: 49%;
-    margin-top: 10px;
-    z-index: 3;
-}
-
-
-.bulb__line {
-    position: absolute;
-    box-shadow: -1px 1px 0px 0px rgba(0,0,0,0.2);
-    right: 50%;
-
-    &--middle {
-        border: 1px solid $whiteish;
-        width: 8px;
-        top: 22px;
-        left: calc(50% + 6px);
-    }
-
-    &--left, &--right {
-        border: $lineOne;
-        height: 10px;
-        top: 13px;
-    }
-
-    &--left {
-        left: calc(50% + 4px);
-        transform: skew(20deg);
-    }
-
-    &--right {
-        left: calc(50% + 14px);
-        transform: skew(-20deg);
-    }
-}
-
-
-
-.neon {
-    text-align: center;
-    position: absolute;
-    right: 0;
-    margin: auto;
-
-    &__arrow--blur, &__arrow--light, &__arrow--dark {
-        font-size: 24px;
-        top: 2px;
-        left: 68px;
-    }
-
-    &__story--blur, &__story--light, &__story--dark {
-        top: -34px;
-        left: 0;
-    }
-
-    &__arrow--blur {
-        color: transparent;
-        text-shadow: 0px 0px 5px $pinkish,
-                     0px 0px 10px $pinkish,
-                     0px 0px 15px $pinkish,
-                     0px 0px 20px $pinkish,
-                     0px 0px 25px $pinkish;
-    }
-
-    &__story--blur {
-        color: transparent;
-        text-shadow: 0px 0px 5px $pinkish,
-                     0px 0px 15px $pinkish,
-                     0px 0px 25px $pinkish;
-    }
-
-    &__story--dark, &__arrow--dark {
-        color: $pinkish;
-        -webkit-text-stroke: 1px $purpleish;
-        text-shadow: -3px 3px rgba(0,0,0,0.1);
-    }
-
-    &__story--light, &__arrow--light {
-        color: $whiteish;
-        -webkit-text-stroke: 1px $pinkish;
-        text-shadow: -3px 3px rgba(0,0,0,0.1);
-    }
-}
-
-
-.flicker {
-    animation: flicker 20s infinite;
-}
-
-@keyframes flicker {
-10% {opacity:1;}
-10.3% {opacity:0;}
-10.4% {opacity:0.5;}
-10.5% {opacity:0;}
-10.6% {opacity:1;}
-
-32.1% {opacity:1;}
-32.2% {opacity:0;}
-32.3% {opacity:1;}
-32.4% {opacity:1;}
-32.5% {opacity:0;}
-32.6% {opacity:1;}
-
-72% {opacity:1;}
-72.2% {opacity:0;}
-72.3% {opacity:1;}
-72.4% {opacity:0;}
-72.5% {opacity:1;}
-72.6% {opacity:0;}
-82.5% {opacity:0;}
-82.6% {opacity:1;}
-82.7% {opacity:0;}
-82.8% {opacity:1;}
-}
-
-
-
-
-
-
-
 
 /* Navigation */
+
+nav * {
+    z-index: 98;
+}
 
 .stick {
     border: $lineTwo;
     background-color: $yellowish;
     position: fixed;
-    box-shadow: -3px 3px 0px 0px rgba(0,0,0,0.2);
+    box-shadow: -3px 3px 0px 0px rgba(0, 0, 0, 0.2);
 
     &__square {
-        left: 0;
         width: 100px;
         height: 22px;
+        left: 0;
         bottom: 34px;
         transform: rotate(1deg);
     }
@@ -454,7 +215,7 @@ body {
     transform: rotate(-1.5deg);
 
     &--shadow {
-        box-shadow: -4px 4px 0px 0px rgba(0,0,0,0.2);
+        box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.2);
     }
 }
 
@@ -462,7 +223,9 @@ body {
     transform: rotate(-1.5deg);
 }
 
-#frank_leeroy, #burger_menu, #basket {
+#frank_leeroy,
+#burger_menu,
+#basket {
     fill: $redish;
 }
 
@@ -471,7 +234,9 @@ body {
     bottom: 18px;
     border: $lineTwo;
 
-    &__right--shadow, &__left--shadow, &__outer {
+    &__right--shadow,
+    &__left--shadow,
+    &__outer {
         background-color: $greyish;
         border-radius: 14px;
         width: 62px;
@@ -488,16 +253,19 @@ body {
         padding: 6px 2px 2px 2px;
     }
 
-    &__right--shadow, &__left--shadow {
-        box-shadow: -4px 4px 0px 0px rgba(0,0,0,0.2);
+    &__right--shadow,
+    &__left--shadow {
+        box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.2);
     }
 
-    &__right, &__right--shadow {
+    &__right,
+    &__right--shadow {
         right: 22px;
         transform: rotate(-1deg);
     }
 
-    &__left, &__left--shadow {
+    &__left,
+    &__left--shadow {
         right: 94px;
         transform: rotate(1deg);
     }
@@ -508,14 +276,16 @@ body {
     position: fixed;
     width: 40px;
     stroke: $blackish;
-    stroke-width: 2px;
-    filter: drop-shadow(-2px 2px 0px rgba(0,0,0,0.2));
+    stroke-width: 1px;
+    filter: drop-shadow(-2px 2px 0px rgba(0, 0, 0, 0.2));
 
 
-    &__one, &__two {
+    &__one,
+    &__two {
         fill: $pinkish;
         bottom: 60px;
     }
+
     &__one {
         right: 8px;
     }
@@ -531,29 +301,431 @@ body {
     }
 }
 
+/* Window */
+
+.window {
+    background-color: $yellowish;
+    border: $lineTwo;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    box-shadow: -5px 5px 0px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+.glass {
+    background-color: $lBlueish;
+    border: $lineTwo;
+    /*opacity:0.3;*/
+    width: 100%;
+    height: 100%;
+}
+
+.lineSkew {
+    border: $lineOne;
+    border-radius: 34%;
+    width: 1px;
+    opacity: 0.3;
+    transform: skew(-30deg);
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    position: absolute;
+
+    &__one {
+        height: 20px;
+        top: 12px;
+        left: 80%;
+        right: 20%;
+    }
+
+    &__two {
+        height: 24px;
+        top: 12px;
+        left: calc(80% + 2px);
+        right: 20%;
+    }
+
+    &__three {
+        height: 40px;
+        left: 30%;
+        bottom: 12px;
+    }
+
+    &__four {
+        height: 42px;
+        left: calc(30% - 3px);
+        bottom: 12px;
+    }
+}
+
+
+/* Electric Panel */
+
+.panel {
+    border: $lineTwo;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+
+    &__back {
+        background-color: $greyish;
+        width: 282px;
+        height: 14px;
+        margin: 0 auto 0 auto;
+    }
+
+    &__front {
+        background-color: $darkish;
+        width: 100px;
+        height: 20px;
+        margin: -6px auto 0 auto;
+        padding-top: 6px;
+    }
+}
+
+.front__line {
+    border: $lineTwo;
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    margin-top: -6px;
+
+    &--left {
+        right: 84%;
+        left: calc(51% - 0px);
+    }
+
+    &--middle {
+        right: 76%;
+        left: calc(51% + 7px);
+    }
+
+    &--right {
+        right: 69%;
+        left: calc(51% + 14px);
+    }
+}
+
+
+.panel__dot {
+    border: $lineTwo;
+    border-radius: 100%;
+    display: inline-block;
+    width: 2px;
+    margin: 3px;
+    position: absolute;
+
+    &--right {
+        right: 0px;
+    }
+}
+
+
+.light {
+    border: $lineTwo;
+    position: absolute;
+    box-shadow: -3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+    width: 14px;
+    height: 18px;
+    border-radius: 6px;
+
+    &--blue {
+        background-color: $blueish;
+        left: 36%;
+        right: 64%;
+    }
+
+    &--red {
+        animation: blinker 2s infinite;
+        background-color: $redish;
+        left: 42%;
+        right: 58%;
+        margin-top: 3px;
+    }
+
+    &--darkred {
+        background-color: $dRedish;
+        left: 42%;
+        right: 58%;
+        margin-top: 3px;
+    }
+}
+
+@keyframes blinker {
+    1% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.bulb {
+    border: 2px solid $yellowish;
+    background-color: $syellish;
+    position: absolute;
+    box-shadow: -3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    width: 18px;
+    height: 24px;
+    left: calc(51% - 2px);
+    right: 49%;
+    margin-top: 7px;
+}
+
+.bulb__socket {
+    border: $lineTwo;
+    position: absolute;
+    box-shadow: -3px 2px 0px 0px rgba(0, 0, 0, 0.2);
+    width: 22px;
+    left: calc(51% - 4px);
+    right: 49%;
+    margin-top: 10px;
+    z-index: 3;
+}
+
+
+.bulb__line {
+    position: absolute;
+    box-shadow: -1px 1px 0px 0px rgba(0, 0, 0, 0.2);
+    right: 50%;
+
+    &--middle {
+        border: 1px solid $whiteish;
+        width: 8px;
+        top: 22px;
+        left: calc(50% + 6px);
+    }
+
+    &--left,
+    &--right {
+        border: $lineOne;
+        height: 10px;
+        top: 13px;
+    }
+
+    &--left {
+        left: calc(50% + 4px);
+        transform: skew(20deg);
+    }
+
+    &--right {
+        left: calc(50% + 14px);
+        transform: skew(-20deg);
+    }
+}
+
+
+
+.neon {
+    text-align: center;
+    position: absolute;
+    right: 0;
+    margin: auto;
+
+    &__arrow--blur,
+    &__arrow--light,
+    &__arrow--dark {
+        font-size: 24px;
+        top: 2px;
+        left: 68px;
+    }
+
+    &__story--blur,
+    &__story--light,
+    &__story--dark {
+        top: -34px;
+        left: 0;
+    }
+
+    &__arrow--blur {
+        color: transparent;
+        text-shadow: 0px 0px 5px $pinkish,
+            0px 0px 10px $pinkish,
+            0px 0px 15px $pinkish,
+            0px 0px 20px $pinkish,
+            0px 0px 25px $pinkish;
+    }
+
+    &__story--blur {
+        color: transparent;
+
+        &--pinkish {
+            text-shadow: 0px 0px 5px $pinkish,
+            0px 0px 15px $pinkish,
+            0px 0px 25px $pinkish;
+        }
+
+        &--redish {
+            text-shadow: 0px 0px 5px $redish,
+            0px 0px 15px $redish,
+            0px 0px 25px $redish;
+        }
+    }
+
+    &__story--dark,
+    &__arrow--dark {
+        text-shadow: -3px 3px rgba(0, 0, 0, 0.1);
+
+        &--pinkish {
+            color: $pinkish;
+            -webkit-text-stroke: 1px $purpleish;
+        }
+
+        &--redish {
+            color: $redish;
+            -webkit-text-stroke: 1px $dRedish;
+        }
+    }
+
+    &__story--light,
+    &__arrow--light {
+        text-shadow: -3px 3px rgba(0, 0, 0, 0.1);
+
+        &--pinkish {
+            color: $whiteish;
+            -webkit-text-stroke: 1px $pinkish;
+        }
+
+        &--redish {
+            color: $whiteish;
+            -webkit-text-stroke: 1px $redish;
+        }
+    }
+
+    &__rotate {
+        transform: rotate(42.5deg);
+        z-index: 3;
+        margin: -13px auto auto 20px;
+    }
+}
+
+
+.flicker {
+    animation: flicker 20s infinite;
+}
+
+@keyframes flicker {
+    10% {
+        opacity: 1;
+    }
+
+    10.3% {
+        opacity: 0;
+    }
+
+    10.4% {
+        opacity: 0.5;
+    }
+
+    10.5% {
+        opacity: 0;
+    }
+
+    10.6% {
+        opacity: 1;
+    }
+
+    32.1% {
+        opacity: 1;
+    }
+
+    32.2% {
+        opacity: 0;
+    }
+
+    32.3% {
+        opacity: 1;
+    }
+
+    32.4% {
+        opacity: 1;
+    }
+
+    32.5% {
+        opacity: 0;
+    }
+
+    32.6% {
+        opacity: 1;
+    }
+
+    72% {
+        opacity: 1;
+    }
+
+    72.2% {
+        opacity: 0;
+    }
+
+    72.3% {
+        opacity: 1;
+    }
+
+    72.4% {
+        opacity: 0;
+    }
+
+    72.5% {
+        opacity: 1;
+    }
+
+    72.6% {
+        opacity: 0;
+    }
+
+    82.5% {
+        opacity: 0;
+    }
+
+    82.6% {
+        opacity: 1;
+    }
+
+    82.7% {
+        opacity: 0;
+    }
+
+    82.8% {
+        opacity: 1;
+    }
+}
 
 /* Paper */
 
 .paper {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 6vw 20vh 6vw;
-    display: inline-block;
+    grid-area: paper;
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
 
-    &__back {
-        width: 88vw;
-        stroke: $blackish;
-        stroke-width: 2px; 
-        fill: white;
-        z-index: -1;
+    &__white {
+        background-color: white;
+        height: calc(100% - 4px);
+        width: calc(100% - 4px);
         position: absolute;
+        left: 2px;
+        top: 2px;
+        clip-path: polygon(100% 0, 100% 100%, 26% 100%, 25% 95%, 24% 100%, 0 100%, 0 3%);
     }
 
-    &__header {
-        display: inline-block;
-        z-index: 1;
-        
+    &__black {
+        background-color: $blackish;
+        height: 100%;
+        position: relative;
+        clip-path: polygon(100% 0, 100% 100%, 25.9% 100%, 25.2% 96.4%, 24.6% 100%, 0 100%, 0 3%);
+    }
+
+    &__text {
+        position: absolute;
+        top: 0;
+        padding: 5%;
+        width: 100%;
     }
 }
 
@@ -569,10 +741,12 @@ body {
     background-color: $syellish;
     position: absolute;
     height: 9px;
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
 
     &--one {
         width: 34px;
-        top: 10px;
+        top: 16px;
         left: -10px;
         transform: rotate(-30deg);
     }
@@ -586,76 +760,516 @@ body {
 
     &--three {
         width: 24px;
-        bottom: -24px;
+        bottom: 0;
         left: -6px;
         transform: rotate(17deg);
     }
 
     &--four {
         width: 38px;
-        bottom: -20px;
+        bottom: 0;
         right: -10px;
         transform: rotate(-20deg);
     }
-    
 }
 
-h1 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 4em;
-    color: $redish;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: $blackish;
-    text-align: left;
-    line-height: 0.4;
-    text-align: center;
+/* Tools */
+
+.tools {
+    position: relative;
 }
 
-h3 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 28px;
-}
-
-p {
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.0em;
-    color: $redish;
-    line-height: 1.5;
-    margin: 1vh 3vw 2vh 5vw;
+.magnet {
+    position: absolute;
+    background-color: $greyish;
+    border: $lineTwo;
+    border-radius: 3px;
+    width: 100%;
+    height: 14px;
+    margin-top: 3em;
+    box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 
-/* Webshop Section */
+.knife {
+    position: absolute;
+    transform: rotate(55deg);
+    margin-top: 3em;
+    right: -10px;
 
-.outside {
-    background-color: $yellowish;
+
+    &__handle {
+        background-color: $blueish;
+        border: $lineOne;
+        border-radius: 2px;
+        width: 42px;
+        height: 9px;
+        margin-top: 0;
+    }
+
+    &__blade {
+        background-color: $greyish;
+        border: $lineOne;
+        border-radius: 1px 1px 20px 1px;
+        width: 34px;
+        height: 7px;
+        margin-top: -8px;
+        margin-left: 40px;
+    }
+
+    &--shadow {
+        box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes drop {
+    0% {
+        bottom: 0px;
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+        bottom: -300px;
+    }
+
+    20.1% {
+        opacity: 0;
+        bottom: 0;
+    }
+}
+
+@keyframes wave {
+    0% {
+        background-position: 0 160px;
+        background-size: 170px 300px;
+    }
+
+    100% {
+        background-position: 500px -18px;
+        background-size: 250px 150px;
+    }
+}
+
+
+.poisen {
+    position: absolute;
+    z-index: 0;
+}
+
+.drops {
+    -webkit-filter: url('#liquid') drop-shadow(-4px 4px 0px rgba(0, 0, 0, 0.2));
+    filter: url('#liquid') drop-shadow(-4px 4px 0px rgba(0, 0, 0, 0.2));
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 46vw;
+    margin-right: 54vw;
+    z-index: 1;
+    opacity: 0;
+    animation: fade-in 1.1s linear .4s forwards;
+}
+
+.drop1,
+.drop2 {
+    width: 20px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &--green {
+        background-color: $greenish;
+    }
+}
+
+.drop1 {
+    width: 12px;
+    height: 16px;
+}
+
+.drop2 {
+    animation: drop 10.3s cubic-bezier(.95,.05,.8,.04) 1.5s infinite;
+}
+
+.spray {
+    position: absolute;
+    transform: rotate(-2deg);
+    top: 6%;
+    left: 55%;
+    right: 45%;
+
+    &__can {
+        background-color: $blackish;
+        border: $lineTwo;
+        border-radius: 1px;
+        width: 40px;
+        height: 70px;
+    }
+
+    &__lid {
+        background-color: $greenish;
+        border: $lineOne;
+        border-radius: 40% 40% 2px 2px;
+        width: 42px;
+        height: 30px;
+        margin-bottom: -1px;
+        margin-left: -1px;
+    }
+
+    &--shadow {
+        box-shadow: -6px 6px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+
+
+
+.skull {
+    position: absolute;
+    margin: 5px 7px 0 7px;
+
+
+    &__head {
+        position: relative;
+        width: 22px;
+        height: 19px;
+        border-radius: 9px 9px 5px 5px;
+        background: white;
+        z-index: 4;
+    }
+
+    &__teeth {
+        position: absolute;
+        bottom: -9px;
+        left: 0;
+        right: 0;
+        z-index: 7;
+        text-align: center;
+        margin-left: -1px;
+    }
+
+    &__tooth {
+        display: inline-block;
+        margin-right: -1px;
+        width: 4px;
+        height: 7px;
+        background: white;
+        border-radius: 0 0 1px 1px;
+    }
+
+    &__eye {
+        position: absolute;
+        top: 4px;
+        left: 1px;
+        width: 9px;
+        height: 6px;
+        background: $blackish;
+        border-radius: 10px 10px 5px 5px;
+    }
+
+    &__eye+&__eye {
+        left: auto;
+        right: 1px;
+    }
+
+    &__nose {
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        margin-left: -3px;
+        width: 5px;
+        height: 5px;
+        border-top: solid 2px $blackish;
+        border-left: solid 2px $blackish;
+        border-right: solid 2px transparent;
+        border-bottom: solid 2px transparent;
+        border-radius: 1px;
+        transform: rotate(45deg);
+    }
+
+    &__text {
+        font-size: 9px;
+        color: white;
+        margin-top: 33px;
+        font-weight: 400;
+    }
+}
+
+
+.pizzacutter {
+    position: absolute;
+    transform: rotate(92deg);
+    margin-top: 3.5em;
+    left: 20%;
+
+
+    &__handle {
+        background-color: $redish;
+        border: $lineOne;
+        border-radius: 10px 2px 2px 10px;
+        width: 36px;
+        height: 9px;
+        margin-top: 0;
+    }
+
+    &__blade {
+        background-color: $greyish;
+        border: $lineOne;
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        margin-top: -24px;
+        margin-left: 38px;
+    }
+
+    &__shine {
+        border-top: solid 2px white;
+        border-radius: 6px 6px 0 0;
+        width: 12px;
+        height: 12px;
+        margin-top: -30px;
+        margin-left: 54px;
+        transform: rotate(30deg);
+    }
+
+    &__hold {
+        background-color: $greyish;
+        border: $lineOne;
+        border-radius: 1px 100% 100% 1px;
+        width: 28px;
+        height: 7px;
+        margin-top: -6px;
+        margin-left: 34px;
+    }
+
+    &--shadow {
+        box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+
+
+.spatula {
+    position: absolute;
+    transform: rotate(95deg);
+    margin-top: 5em;
+    left: -10%;
+
+
+    &__handle {
+        background-color: $pinkish;
+        border: $lineOne;
+        border-radius: 3px;
+        width: 48px;
+        height: 12px;
+        margin-top: -10px;
+
+    }
+
+    &__hold {
+        background-color: $greyish;
+        border: $lineOne;
+        border-radius: 1;
+        width: 56px;
+        height: 8px;
+        margin-top: 6px;
+        margin-left: 46px;
+    }
+
+    &__hold--noborder {
+        background-color: $greyish;
+        border-radius: 1;
+        width: 56px;
+        height: 6px;
+        margin-top: -24px;
+        margin-left: 50px;
+    }
+
+    &__plate {
+        background-color: $greyish;
+        border: $lineOne;
+        border-radius: 10px;
+        width: 54px;
+        height: 40px;
+        margin-top: -25px;
+        margin-left: 100px;
+
+        &--hole {
+            background-color: #C1C1C1;
+            border: $lineOne;
+            border-radius: 20px;
+            width: 40px;
+            height: 8px;
+            margin-top: 3px;
+            margin-bottom: 4px;
+            margin-left: 7px;
+        }
+    }
+
+    &--shadow {
+        box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    &--shadowhold {
+        box-shadow: 5px 3px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.employee {
+    position: absolute;
+    transform: rotate(2deg);
+    top: 45%;
+    right: 4%;
+    z-index: -1;
+
+    &__outer {
+        background-color: white;
+        border: $lineOne;
+        border-radius: 1px;
+        width: 60px;
+        height: 88px;
+    }
+
+    &__inner {
+        background-color: $whiteish;
+        border: $lineOne;
+        border-radius: 1px;
+        margin: 2px;
+        width: 54px;
+        height: 58px;
+        position: relative;
+    }
+
+    &__line {
+        background-color: $blackish;
+        border-left: solid 1px $blackish;
+        border-radius: 1px;
+        width: 0;
+
+
+        &--one {
+            position: absolute;
+            height: 8px;
+            top: 5px;
+            left: 20%;
+        }
+
+        &--two {
+            position: absolute;
+            height: 8px;
+            bottom: 60%;
+            right: 20%;
+        }
+
+        &--three {
+            position: absolute;
+            height: 14px;
+            bottom: 10%;
+            left: 40%;
+        }
+    }
+
+    &__text {
+        font-size: 8px;
+        font-weight: 700;
+        color: $blackish;
+        margin-top: 4px;
+    }
+}
+
+/* Sales Section */
+
+
+.screw {
+    background-color: $greyish;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
     border: $lineTwo;
     position: absolute;
-    width: 100vw;
-    height: 200vh;
-    top: 200vh;
-    box-shadow: 0 -4px 0px 0px rgba(0,0,0,0.2);
+    box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+
+    &--one {
+        top: 6px;
+        left: 6px;
+    }
+
+    &--two {
+        top: 6px;
+        right: 6px;
+    }
+
+    &--three {
+        bottom: 6px;
+        left: 6px;
+    }
+
+    &--four {
+        bottom: 6px;
+        right: 6px;
+    }
+
+    &__line {
+        background-color: $blackish;
+        border: $lineOne;
+        position: absolute;
+        width: 6px;
+        top: 2px;
+
+        &--one {
+            transform: rotate(10deg);
+        }
+
+        &--two {
+            transform: rotate(-4deg);
+        }
+
+        &--three {
+            transform: rotate(-54deg);
+        }
+
+        &--four {
+            transform: rotate(84deg);
+        }
+    }
 }
+
 
 .plate {
     background-color: $yellowish;
     border: $lineOne;
     position: absolute;
-    box-shadow: -1px 1px 0px 1px rgba(0,0,0,0.2);
+    box-shadow: -1px 1px 0px 1px rgba(0, 0, 0, 0.2);
     padding: 3px;
+    z-index: 0;
 
     &--one {
         width: 28vw;
         height: 38vh;
         top: 3%;
-        left: 5%;
+        left: 4.8%;
     }
 
     &--two {
         width: 16vw;
         height: 6vh;
-        top: 30%;
-        right: 4%;
+        top: 34%;
+        right: 5%;
     }
 
     &--three {
@@ -665,9 +1279,7 @@ p {
         left: 20%;
     }
 
-    &--three {
-
-    }
+    &--three {}
 
     &__dot {
         border-radius: 2px;
@@ -698,75 +1310,302 @@ p {
     }
 }
 
-.screw {
-    background-color: $greyish;
-    border-radius: 10px;
-    width: 10px;
-    height: 10px;
-    border: $lineTwo;
-    position: absolute;
-    box-shadow: -2px 2px 0px 0px rgba(0,0,0,0.2);
-    z-index: 0;
-
-    &--one {
-        top: 6px;
-        left: 6px;
-    }
-
-    &--two {
-        top: 6px;
-        right: 6px;
-    }
-
-    &--three {
-        bottom: 6px;
-        left: 6px;
-    }
-
-    &--four {
-        bottom: 6px;
-        right: 6px;
-    }
-
-    &__line {
-        background-color: $blackish;
-        border: $lineOne;
-        position: absolute;
-        width: 6px;
-        top: 2px;
-
-        &--one {
-            transform: rotate(10deg); 
-        }
-
-        &--two {
-            transform: rotate(-4deg);  
-        }
-
-        &--three {
-            transform: rotate(-54deg);  
-        }
-
-        &--four {
-            transform: rotate(84deg);  
-        }
-    }
-}
-
 /* Sales Plate */
 
 .sales {
+    position: relative;
     background-color: $whiteish;
-    width: 83.5vw;
-    height: 76vh;
+    width: 100%;
+    height: 100%;
     border: $lineTwo;
-    position: absolute;
-    top: 10vh;
-    left: 8vw;
-    right: 8vw;
-    box-shadow: -4px 4px 0px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 
-    &--one {
+    box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.2);
 
+    &__one {
+        grid-area: sales__one;
+    }
+
+    &__two {
+        grid-area: sales__two;
+    }
+}
+
+.monitor {
+    position: relative;
+    z-index: 1;
+    grid-row: 6 / 7;
+    
+
+    &__outer {
+        background-color: $greyish;
+        width: 100%;
+        height: 100%;
+        border: $lineTwo;
+        border-radius: 26px;
+        padding: 5px;
+        position: absolute;
+    }
+
+    &__inner {
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        border: $lineTwo;
+        border-radius: 20px;
+    }
+
+    &__plate {
+        background-color: $darkish;
+        width: 100px;
+        height: 10px;
+        border: $lineTwo;
+        border-radius: 4px;
+        position: absolute;
+        top: -7px;
+        right: calc(50% - 50px);
+        left: calc(50% - 50px);
+        margin: auto;
+    }
+
+    &__wire--outer {
+        position: absolute;
+        background-color: $redish;
+        border: $lineOne;
+        border-radius: 100%;
+        padding: 3px;
+        width: 50px;
+        height: 50px;
+        top: -7px;
+        left: 31%;
+        right: 69%;
+        z-index: -1;
+    }
+
+    &__wire--inner {
+        background-color: $yellowish;
+        border: $lineOne;
+        border-radius: 100%;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.trapezoid {
+    &__outer {
+        position: absolute;
+        top: -16px;
+        right: 22%;
+        width: 22px;
+        height: 0;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-bottom: 18px solid $blackish;
+    }
+
+    &__inner {
+        padding: 2px;
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 16px;
+        height: 100%;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-bottom: 14px solid $redish;
+    }
+}
+
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18vw;
+    font-weight: 700;
+    color: $redish;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $blackish;
+    text-align: left;
+    line-height: 0.4;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h6 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 5.1vw;
+    color: $redish;
+    line-height: 1.5;
+    margin: 1vh 3vw 5vh 5vw;
+}
+
+@media only screen and (min-width: 860px) {
+
+    h1 {
+        font-size: calc(2em + 4.8vw);
+        line-height: 0;
+        margin-top: 8vh;
+        margin-left: -15px;
+    }
+
+    p {
+        font-size: 2.8vh;
+        margin: 0 0 8vh 0;
+        margin: 0vh 1vw 3vh 1vw;
+    }
+
+    .section {
+
+        &__one {
+            grid-template-columns: auto minmax(48%, 630px) 4vw minmax(34%, 410px) auto;
+            grid-template-rows: 10.5vh 2.5vh 53vh 20vh 14vh;
+            grid-template-areas:
+                ". . . . ."
+                ". . . paper ."
+                ". window . paper ."
+                ". tools . paper ."
+                ". tools . . .";
+            margin: 0 2vw;
+        }
+
+        &__two {
+            grid-template-columns: auto 28% auto 30% auto 28% auto;
+            grid-template-rows: 10vh 1fr 14vh;
+            grid-template-areas:
+                ". . . . . . ."
+                ". sales__one . monitor . sales__two ."
+                ". . . . . . .";
+            margin: 0;
+            height: 100vh;
+            position: relative;
+        }
+    }
+
+
+    .window {
+        grid-area: window;
+        margin: 0 auto 0 auto;
+        width: 100%;
+        height: 100%;
+    }
+
+    .paper {
+        position: relative;
+        grid-area: paper;
+        grid-row: 2 / 5;
+        grid-column: 4 / 5;
+    }
+
+    .tools {
+        grid-area: tools;
+    }
+    
+    .poisen {
+            top: -224px;
+            left: 68.9%;
+            right: 31.1%;
+            z-index: 0;
+    }
+
+    .sales {
+
+        &__one {
+            grid-area: sales__one;
+        }
+
+        &__two {
+            grid-area: sales__two;
+        }
+    }
+
+    .monitor {
+        grid-area: monitor;
+        margin: 40px 0;
+    }
+
+    .trapezoid {
+        &__outer {
+            right: 32%;
+        }
+    }
+
+    .panel {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+    }
+
+    .lineSkew {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+    }
+
+    .magnet {
+        margin-top: 2.2em;
+        margin-left: 28%;
+        width: 70%;
+    }
+
+    .knife {
+        transform: rotate(22deg);
+        margin-top: 2.3em;
+    }
+
+    .spray {
+        top: 3%;
+        left: 70%;
+        right: 30%;
+    }
+
+    .drops {
+        margin-top: 268px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pizzacutter {
+        transform: rotate(82deg);
+        left: 50%;
+    }
+
+    .spatula {
+        transform: rotate(95deg);
+        left: 28%;
+    }
+
+    .employee {
+        transform: rotate(-2deg);
+        top: -8%;
+        left: 10%;
+
+        &__outer {
+            border: $lineTwo;
+            width: 115px;
+            height: 165px;
+        }
+
+        &__inner {
+            border: $lineTwo;
+            width: 107px;
+            height: 105px;
+        }
+
+        &__line {
+            border: $lineOne;
+        }
+
+        &__text {
+            font-size: 14px;
+            margin-top: 10px;
+        }
     }
 }
