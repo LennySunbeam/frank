@@ -1,4 +1,3 @@
-
 $blackish: #272727;
 $darkish: #525252;
 $greyish: #919091;
@@ -24,14 +23,17 @@ $lineTwo: 2px solid $blackish;
 *::after {
     box-sizing: border-box;
 }
+
 html {
-    background-color: $greyish;
-  }
-  
+    background-color: $redish;
+    Overflow-x: hidden; //horizontal
+}
+
 
 body {
     margin: 0;
     background-color: $whiteish;
+
 }
 
 .section {
@@ -84,7 +86,7 @@ body {
 }
 
 .metalside {
-    background-color: $greyish;
+    background-color: $redish;
     border: $lineTwo;
     position: fixed;
     margin: 0;
@@ -135,14 +137,16 @@ body {
     &__left--shadow {
         border-left: transparent;
         box-shadow: 5px 15px 0px 0px rgba(0, 0, 0, 0.2);
+        z-index: 98;
     }
 
     &__right--shadow {
         border-right: transparent;
         box-shadow: -5px 15px 0px 0px rgba(0, 0, 0, 0.2);
         right: 0px;
+        z-index: 98;
     }
-    
+
 }
 
 /* Background Lines */
@@ -252,16 +256,19 @@ nav * {
     }
 }
 
-#frank_leeroy {
+#frank__leeroy {
     transform: rotate(-1.5deg);
 }
 
-#frank_leeroy,
-#burger_menu, #facebook, #instagram {
+#frank__leeroy,
+#burger__menu,
+#facebook,
+#instagram {
     fill: $redish;
 }
 
-#facebook, #instagram {
+#facebook,
+#instagram {
     margin-top: -4px;
     fill: $redish;
 }
@@ -270,7 +277,7 @@ nav * {
     fill: $dRedish;
 }
 
-.basket--font{
+.basket--font {
     font-size: 20px;
     font-weight: 700;
     position: absolute;
@@ -325,6 +332,7 @@ nav * {
         position: absolute;
         border: $lineTwo;
         box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+
         &--left {
             left: 20%;
             bottom: -90px;
@@ -333,6 +341,16 @@ nav * {
         &--right {
             right: 20%;
             bottom: -90px;
+        }
+
+        &--menu--top {
+            right: calc(-60px - 4vw);
+            top: -2px;
+        }
+
+        &--menu--bottom {
+            right: calc(-60px - 4vw);
+            bottom: -2px;
         }
     }
 }
@@ -344,7 +362,7 @@ nav * {
     position: absolute;
     width: 10px;
     height: 40px;
-    
+
 
     &--left {
         left: calc(20% + 26px);
@@ -370,6 +388,22 @@ nav * {
             bottom: -32px;
             box-shadow: -4px -2px 0px 0px rgba(0, 0, 0, 0.2);
         }
+    }
+
+    &--top {
+        transform: rotate(90deg);
+        top: 19px;
+        right: -12px;
+        height: 20px;
+        z-index: 90;
+        }
+
+    &--bottom {
+        transform: rotate(90deg);
+        bottom: 19px;
+        right: -12px;
+        height: 20px;
+        z-index: 90;
     }
 
 }
@@ -715,14 +749,14 @@ nav * {
 
         &--pinkish {
             text-shadow: 0px 0px 5px $pinkish,
-            0px 0px 15px $pinkish,
-            0px 0px 25px $pinkish;
+                0px 0px 15px $pinkish,
+                0px 0px 25px $pinkish;
         }
 
         &--redish {
             text-shadow: 0px 0px 5px $redish,
-            0px 0px 15px $redish,
-            0px 0px 25px $redish;
+                0px 0px 15px $redish,
+                0px 0px 25px $redish;
         }
     }
 
@@ -1078,7 +1112,7 @@ nav * {
 }
 
 .drop2 {
-    animation: drop 10.3s cubic-bezier(.95,.05,.8,.04) 1.5s infinite;
+    animation: drop 10.3s cubic-bezier(.95, .05, .8, .04) 1.5s infinite;
 }
 
 .spray {
@@ -1512,9 +1546,9 @@ img {
     position: absolute;
     background-color: transparent;
     top: 10.5%;
-        left: calc(50% - 8vw);
-        width: 15.8vw;
-        height: 15.8vw;
+    left: calc(50% - 8vw);
+    width: 15.8vw;
+    height: 15.8vw;
     border: solid 4px $redish;
     transform: rotate(45deg);
     box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.2);
@@ -1548,7 +1582,7 @@ img {
     grid-row: 6 / 7;
     grid-column: 2 / 3;
     margin-bottom: 18%;
-    
+
 
     &__outer {
         background-color: $greyish;
@@ -1562,13 +1596,21 @@ img {
         box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.2);
     }
 
+    &--shine {
+        border-bottom: 1px solid white;
+        border-left: 1px solid white;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+    }
+
     &__inner {
         background-color: white;
         width: 100%;
         height: 100%;
         border: $lineTwo;
         border-radius: 20px;
-        padding: 5vh 0.5vw 6vh 1vw ;
+        padding: 5vh 0.5vw 6vh 1vw;
     }
 
     &__plate {
@@ -1582,6 +1624,13 @@ img {
         right: 0;
         left: 0;
         margin: auto;
+
+        &--shine {
+            border-top: 1px solid rgba(255, 0, 73, 0.25);
+            height: 100%;
+            width: 70%;
+            margin: 0 auto;
+        }
     }
 
     &__wire--outer {
@@ -1594,7 +1643,7 @@ img {
         height: 50px;
         top: -6px;
         right: 50%;
-        left: calc(50% - 76px); 
+        left: calc(50% - 76px);
         z-index: -1;
     }
 
@@ -1641,6 +1690,11 @@ img {
 
 
 
+
+
+
+/* Buttons */
+
 .price {
     border: $lineTwo;
     position: absolute;
@@ -1649,7 +1703,7 @@ img {
     width: calc(34px + 2.8vw);
     height: calc(12px + 3vh);
     padding-top: 3.5%;
-    
+
 
     &--redish {
         background-color: $redish;
@@ -1662,13 +1716,13 @@ img {
     }
 
     &--redish:active {
-        bottom:calc(19.9% + 4px);
+        bottom: calc(19.9% + 4px);
     }
 
     &--dRedish {
         background-color: $dRedish;
         bottom: calc(19.5% + 4px);
-        left: 29%; 
+        left: 29%;
         height: 20px;
         width: calc(34px + 2.8vw);
         transform: skew(0, 1deg)
@@ -1683,7 +1737,7 @@ img {
     width: calc(34px + 2.8vw);
     height: calc(12px + 3vh);
     padding-top: 3.5%;
-    
+
 
     &--white {
         background-color: white;
@@ -1696,13 +1750,13 @@ img {
     }
 
     &--white:active {
-        bottom:calc(19.9% + 4px);
+        bottom: calc(19.9% + 4px);
     }
 
     &--greyish {
         background-color: $greyish;
         bottom: calc(19.5% + 4px);
-        right: 29%; 
+        right: 29%;
         height: 20px;
         width: calc(34px + 2.8vw);
         transform: skew(0, 1deg)
@@ -1723,7 +1777,6 @@ img {
     width: 80%;
     height: calc(14px + 3vh);
     padding-top: 1%;
-    
 
     &--green {
         background-color: $greenish;
@@ -1743,35 +1796,385 @@ img {
         background-color: $dGreenish;
         bottom: 8.2%;
         height: 20px;
-        width: calc(80% + 0);
+        width: 80%;
         transform: skew(-0.3deg, 0)
+    }
+
+    &--story {
+        top: 10%;
+        bottom: auto;
+        background-color: $redish;
+        transform: skew(0, -0.5deg);
+        height: calc(16px + 4vh);
+
+        &--bottom {
+            top: calc(10% + 10px);
+            bottom: auto;
+            background-color: $dRedish;
+            transform: skew(0deg, 1deg);
+            height: calc(16px + 4vh);
+        }
+    }
+
+    
+
+    &--shop {
+        top: 32%;
+        bottom: auto;
+        transform: skew(0, 0.5deg);
+        height: calc(16px + 4vh);
+
+        &--bottom {
+            top: calc(32% + 10px);
+            bottom: auto;
+            background-color: $dGreenish;
+            transform: skew(0deg, -1deg);
+            height: calc(16px + 4vh);
+        }
+    }
+
+    &--shop:hover {
+        top: 32.2%;
+    }
+
+    &--shop:active {
+        top: 34.4%;
+    }
+
+    &--useless {
+        top: 54%;
+        left: 20%;
+        right: 20%;
+        bottom: auto;
+        background-color: white;
+        height: calc(16px + 4vh);
+        width: 60%;
+        padding: auto;
+
+        &--bottom {
+            top: calc(54% + 10px);
+            left: 20%;
+            right: 20%;
+            bottom: auto;
+            background-color: $greyish;
+            height: calc(16px + 4vh);
+            width: 60%;
+            padding: auto; 
+        }
+
+        &--font {
+            font-size: calc(10px + 0.5vw);
+            color: $blackish;
+            padding-top: calc(4px + 0.5vh)
+        }
+    }
+
+    &--useless:hover {
+        top: 54.2%;
+    }
+
+    &--useless:active {
+        top: 56.2%;
     }
 }
 
 ::-webkit-scrollbar {
     width: 10px;
-    background: $greyish; 
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: $greyish; 
-    box-shadow: inset 0 0 5px transparent; 
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: $darkish; 
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: $blackish; 
-  }
+    background: $redish;
+}
 
-  
+/* Track */
+::-webkit-scrollbar-track {
+    background: $redish;
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $dRedish;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $blackish;
+}
+
+
+.gate {
+    background-color: $greyish;
+    border: $lineTwo;
+    height: 100vh;
+    width: 100vw;
+    z-index: 98;
+    position: absolute;
+
+    animation: move 1.2s infinite 2s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    top: 0;
+
+    &__black {
+        width: 100%;
+        height: 9%;
+        background-color: transparent;
+        border: $lineTwo;
+        z-index: 92;
+        position: absolute;
+
+        &--one {
+            top: 10%;
+        }
+
+        &--two {
+            top: 20%;
+        }
+
+        &--three {
+            top: 30%;
+        }
+
+        &--four {
+            top: 40%;
+        }
+
+        &--five {
+            top: 50%;
+        }
+
+        &--six {
+            top: 60%;
+        }
+
+        &--seven {
+            top: 70%;
+        }
+
+        &--eight {
+            top: 80%;
+        }
+
+        &--nine {
+            top: 90%;
+        }
+    }
+
+    &__white {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+
+    &--frank {
+        margin: 25vh 20vw;
+        position: absolute;
+        z-index: 91;
+    }
+}
+
+@keyframes move {
+    1% {
+        transform: translateY(-0%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* Menu */
+
+
+.bar {
+    display: block;
+    background-color: $redish;
+    width: 34px;
+    height: 5px;
+    border-radius: 5px;
+    margin: 8px auto;
+    transition: background-color 0.4s ease-in, transform 0.4s ease-in,
+        width 0.4s ease-in;
+}
+
+.menu {
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 90;
+}
+
+.menuBlack {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle, rgba(39, 39, 39, 0.798739564185049) 10%, rgba(39, 39, 39, 0.9500000683867297) 70%);
+    z-index: 80;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+}
+
+.middle {
+    margin: 0 auto;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked~.menu {
+    transform: translateY(0%);
+}
+
+input[type="checkbox"]:checked~.menuBlack {
+    opacity: 1;
+}
+
+input[type="checkbox"]:checked~label .bar {
+    background-color: $redish;
+}
+
+input[type="checkbox"]:checked~label .top {
+    -webkit-transform: translateY(0px) rotateZ(45deg);
+    -moz-transform: translateY(0px) rotateZ(45deg);
+    -ms-transform: translateY(0px) rotateZ(45deg);
+    -o-transform: translateY(0px) rotateZ(45deg);
+    transform: translateY(12px) rotateZ(45deg);
+}
+
+input[type="checkbox"]:checked~label .bottom {
+    -webkit-transform: translateY(-15px) rotateZ(-45deg);
+    -moz-transform: translateY(-15px) rotateZ(-45deg);
+    -ms-transform: translateY(-15px) rotateZ(-45deg);
+    -o-transform: translateY(-15px) rotateZ(-45deg);
+    transform: translateY(-14px) rotateZ(-45deg);
+}
+
+input[type="checkbox"]:checked~label .middle {
+    width: 0;
+}
+
+label {
+    bottom: 8px;
+    right: 16px;
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    z-index: 100;
+    position: fixed;
+    transform: rotate(-1deg);
+}
+
+
+
+
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4vh minmax(100px, 22vh) 6vh 50vh 16vh;
+    grid-template-areas: "pole""speakerbox""poleTwo""platform""navigation";
+    position: fixed;
+    width: 100vw;
+
+
+    &__pole {
+        grid-area: pole;
+    }
+
+    &__speakerbox {
+        grid-area: speakerbox;
+        border: $lineTwo;
+        background-color: $greyish;
+        width: 45%;
+        margin: 0 auto;
+        z-index: 89;
+        position: relative;
+        padding: calc(4px + 1vh) calc(10px + 3vw);
+
+
+        &__pole {
+            border: $lineTwo;
+            background-color: $whiteish;
+            width: 50px;
+            height: calc(4vh + 1px);
+            position: absolute;
+            top: calc(-4vh - 1px);
+            z-index: 88;
+            left: calc(50% - 25px);
+        }
+
+        &__outer {
+            border: $lineOne;
+            background-color: $redish;
+            border-radius: 20px;
+            height: 100%;
+            padding: 4px;
+        }
+
+        &--inner {
+            border: $lineOne;
+            background-color: $whiteish;
+            border-radius: 16px;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, $blackish, transparent 1%) center, $whiteish;
+            background-size: 17px 17px;
+            background-image: radial-gradient($blackish 18%, transparent 20%);
+        }
+
+    }
+
+    &__poleTwo {
+        grid-area: poleTwo;
+    }
+
+    &__platform {
+        grid-area: platform;
+        border: $lineTwo;
+        background-color: $greyish;
+        width: 90%;
+        margin: 0 auto;
+        z-index: 89;
+        position: relative;
+
+        &__pole {
+            border: $lineTwo;
+            background-color: $whiteish;
+            width: 50px;
+            height: calc(32vh + 3px);
+            position: absolute;
+            top: calc(-32vh - 3px);
+            left: 8px;
+            z-index: 88;
+        }
+    }
+
+    &__navigation {
+        grid-area: navigation;
+        z-index: 89;
+
+    }
+
+&__bottomPlate {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: -4px;
+    background-color: $whiteish;
+    border: $lineTwo;
+    width: 80%;
+    height: 20%;
+}
+
+}
+
+
+
+
 
 h1 {
     font-family: 'Raleway', sans-serif;
@@ -1888,12 +2291,12 @@ p {
     .tools {
         grid-area: tools;
     }
-    
+
     .poisen {
-            top: -224px;
-            left: 68.9%;
-            right: 31.1%;
-            z-index: 0;
+        top: -224px;
+        left: 68.9%;
+        right: 31.1%;
+        z-index: 0;
     }
 
     .sales {
@@ -1948,9 +2351,9 @@ p {
         &--redish:hover {
             bottom: calc(18.8% + 4px);
         }
-    
+
         &--redish:active {
-            bottom:calc(17.9% + 4px);
+            bottom: calc(17.9% + 4px);
         }
 
         &--dRedish {
@@ -1973,7 +2376,7 @@ p {
         }
 
         &--white:active {
-            bottom:calc(17.9% + 4px);
+            bottom: calc(17.9% + 4px);
         }
 
         &--greyish {
@@ -1992,6 +2395,41 @@ p {
             bottom: 8.3%;
             transform: skew(1deg, 0)
         }
+
+        &--story {
+            top: 8%;
+            height: calc(20px + 4vh);
+
+            &--bottom {
+                top: calc(13% + 10px);
+            }
+        }
+
+        &--story:hover {
+            top: 8.2%;
+        }
+    
+        &--story:active {
+            top: 10.4%;
+        }
+
+        &--shop {
+            top: 30%;
+            height: calc(20px + 4vh);
+    
+            &--bottom {
+                top: calc(35% + 10px);
+            }
+        }
+    
+        &--shop:hover {
+            top: 30.2%;
+        }
+    
+        &--shop:active {
+            top: 32.4%;
+        }
+
     }
 
 
@@ -2004,12 +2442,12 @@ p {
         }
 
         &__inner {
-            padding: 3vw 0.5vw 6vh 1vw ;
+            padding: 3vw 0.5vw 6vh 1vw;
         }
 
         &__wire--outer {
             right: 50%;
-            left: calc(50% - 78px); 
+            left: calc(50% - 78px);
         }
 
         &__plate {
@@ -2021,24 +2459,24 @@ p {
             font-size: calc(4px + 0.5vw);
             line-height: 0;
         }
-        
+
     }
 
     .trapezoid {
         &__outer {
             right: 50%;
-            left: calc(50% + 55px); 
+            left: calc(50% + 55px);
         }
     }
 
     .wire__straight {
         height: 8%;
-    
+
         &--left {
             bottom: calc(11.6% + 4px);
-            
+
         }
-    
+
         &--right {
             bottom: calc(11.5% + 4px);
         }
@@ -2111,6 +2549,83 @@ p {
         &__text {
             font-size: 14px;
             margin-top: 10px;
+        }
+    }
+
+
+    /* Menu */
+
+
+    .menu {
+        display: grid;
+        grid-template-columns: auto minmax(600px, 34%) auto;
+        grid-template-rows: 4vh minmax(200px, 22vh) 6vh 50vh 16vh;
+        grid-template-areas:
+            "menuLeft pole menuRight"
+            "menuLeft speakerbox menuRight"
+            "menuLeft poleTwo menuRight"
+            "menuLeft platform menuRight"
+            "menuLeft navigation menuRight";
+
+
+        &__pole {
+            grid-area: pole;
+
+            &--Two {
+                grid-area: poleTwo;
+            }
+        }
+
+        &__speakerbox {
+            grid-area: speakerbox;
+            padding: calc(4px + 2vh) calc(10px + 2.5vw);
+        }
+
+
+        &__platform {
+            grid-area: platform;
+        }
+
+        &__navigation {
+            grid-area: navigation;
+        }
+
+        &__right {
+            grid-area: menuRight;
+        }
+
+        &__left {
+            grid-area: menuLeft;
+        }
+    }
+
+    .button {
+        &--social {
+
+            &--menu--top {
+                top: 10px;
+                right: -80px;
+
+            }
+
+            &--menu--bottom {
+                right: -80px;
+                bottom: 10px;
+            }
+        }
+    }
+
+    .button__tube {
+        &--top {
+            top: 29px;
+            right: -15px;
+            height: 26px;
+            }
+    
+        &--bottom {
+            bottom: 29px;
+            right: -15px;
+            height: 26px;
         }
     }
 }
