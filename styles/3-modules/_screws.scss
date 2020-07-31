@@ -1,0 +1,55 @@
+/* Screws */
+
+.screw {
+    background-color: $greyish;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    border: $lineTwo;
+    position: absolute;
+    box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+
+    &--one {
+        top: 6px;
+        left: 6px;
+    }
+
+    &--two {
+        top: 6px;
+        right: 6px;
+    }
+
+    &--three {
+        bottom: 6px;
+        left: 6px;
+    }
+
+    &--four {
+        bottom: 6px;
+        right: 6px;
+    }
+
+    &__line {
+        background-color: $blackish;
+        border: $lineOne;
+        position: absolute;
+        width: 6px;
+        top: 2px;
+
+        &--one {
+            transform: rotate(10deg);
+        }
+
+        &--two {
+            transform: rotate(-4deg);
+        }
+
+        &--three {
+            transform: rotate(-54deg);
+        }
+
+        &--four {
+            transform: rotate(84deg);
+        }
+    }
+}

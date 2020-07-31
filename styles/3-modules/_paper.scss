@@ -1,0 +1,72 @@
+/* Paper */
+
+.paper {
+    
+    &__white {
+        background-color: white;
+        height: calc(100% - 4px);
+        width: calc(100% - 4px);
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        clip-path: polygon(100% 0, 100% 100%, 26% 100%, 25% 95%, 24% 100%, 0 100%, 0 3%);
+    }
+
+    &__black {
+        background-color: $blackish;
+        height: 100%;
+        position: relative;
+        clip-path: polygon(100% 0, 100% 100%, 25.9% 100%, 25.2% 96.4%, 24.6% 100%, 0 100%, 0 3%);
+    }
+
+    &__text {
+        position: absolute;
+        top: 0;
+        padding: 5%;
+        width: 100%;
+    }
+}
+
+.insertmoney {
+    margin-top: -10px;
+    fill: $redish;
+    transform: rotate(2deg);
+    margin: auto 3vw;
+}
+
+.paper__tape {
+    border: $lineOne;
+    background-color: $syellish;
+    position: absolute;
+    height: 9px;
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
+
+    &--one {
+        width: 34px;
+        top: 3%;
+        left: -10px;
+        transform: rotate(-30deg);
+    }
+
+    &--two {
+        width: 30px;
+        top: 0;
+        right: -10px;
+        transform: rotate(20deg);
+    }
+
+    &--three {
+        width: 24px;
+        bottom: 0;
+        left: -6px;
+        transform: rotate(17deg);
+    }
+
+    &--four {
+        width: 38px;
+        bottom: 0;
+        right: -10px;
+        transform: rotate(-20deg);
+    }
+}

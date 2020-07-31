@@ -1,0 +1,222 @@
+
+/* Radial Background */
+
+.menuBlack {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle, rgba(39, 39, 39, 0.798739564185049) 10%, rgba(39, 39, 39, 0.9500000683867297) 70%);
+    z-index: 80;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+}
+
+
+/* Burger Menu */
+
+.middle {
+    margin: 0 auto;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked~.menu {
+    transform: translateY(0%);
+}
+
+input[type="checkbox"]:checked~.menuBlack {
+    opacity: 1;
+}
+
+input[type="checkbox"]:checked~label .bar {
+    background-color: $redish;
+}
+
+input[type="checkbox"]:checked~label .top {
+    -webkit-transform: translateY(0px) rotateZ(45deg);
+    -moz-transform: translateY(0px) rotateZ(45deg);
+    -ms-transform: translateY(0px) rotateZ(45deg);
+    -o-transform: translateY(0px) rotateZ(45deg);
+    transform: translateY(12px) rotateZ(45deg);
+}
+
+input[type="checkbox"]:checked~label .bottom {
+    -webkit-transform: translateY(-15px) rotateZ(-45deg);
+    -moz-transform: translateY(-15px) rotateZ(-45deg);
+    -ms-transform: translateY(-15px) rotateZ(-45deg);
+    -o-transform: translateY(-15px) rotateZ(-45deg);
+    transform: translateY(-14px) rotateZ(-45deg);
+}
+
+input[type="checkbox"]:checked~label .middle {
+    width: 0;
+}
+
+label {
+    bottom: 8px;
+    right: 16px;
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    z-index: 100;
+    position: fixed;
+    transform: rotate(-1deg);
+}
+
+/* Menu */
+
+.bar {
+    display: block;
+    background-color: $redish;
+    width: 34px;
+    height: 5px;
+    border-radius: 5px;
+    margin: 8px auto;
+    transition: background-color 0.4s ease-in, transform 0.4s ease-in, width 0.4s ease-in;
+}
+
+.menu {
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 90;
+
+    &__speakerbox {
+        border: $lineTwo;
+        background-color: $greyish;
+        width: 45%;
+        margin: 0 auto;
+        z-index: 89;
+        position: relative;
+        padding: calc(4px + 1vh) calc(10px + 3vw);
+
+        @include desktop {
+            padding: calc(4px + 2vh) calc(10px + 2.5vw);
+        }
+
+        &__pole {
+            border: $lineTwo;
+            background-color: $whiteish;
+            width: 50px;
+            height: calc(4vh + 1px);
+            position: absolute;
+            top: calc(-4vh - 1px);
+            z-index: 88;
+            left: calc(50% - 25px);
+        }
+
+        &__outer {
+            border: $lineOne;
+            background-color: $redish;
+            border-radius: 20px;
+            height: 100%;
+            padding: 4px;
+        }
+
+        &--inner {
+            border: $lineOne;
+            background-color: $whiteish;
+            border-radius: 16px;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, $blackish, transparent 1%) center, $whiteish;
+            background-size: 17px 17px;
+            background-image: radial-gradient($blackish 18%, transparent 20%);
+        }
+    }
+
+    &__platform {
+        border: $lineTwo;
+        background-color: $greyish;
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+
+        &__pole {
+            border: $lineTwo;
+            background-color: $whiteish;
+            width: 50px;
+            height: calc(32vh + 3px);
+            position: absolute;
+            top: calc(-32vh - 3px);
+            left: 8px;
+        }
+    }
+
+    &__bottomPlate {
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        bottom: -4px;
+        background-color: $whiteish;
+        border: $lineTwo;
+        width: 80%;
+        height: 20%;
+    }
+}
+
+
+/* Social Buttons */
+
+.button {
+
+    &--social {
+
+        &--menu--top {
+            right: calc(-60px - 4vw);
+            top: -2px;
+
+            @include desktop {
+                top: 10px;
+                right: -80px;
+            }
+        }
+
+        &--menu--bottom {
+            right: calc(-60px - 4vw);
+            bottom: -2px;
+
+            @include desktop {
+                right: -80px;
+                bottom: 10px;
+            }
+        }
+    }
+}
+
+
+
+.button__tube {
+
+    &--top {
+        transform: rotate(90deg);
+        top: 19px;
+        right: -12px;
+        height: 20px;
+        z-index: 90;
+
+        @include desktop {
+            top: 29px;
+            right: -15px;
+            height: 26px;
+        }
+    }
+
+    &--bottom {
+        transform: rotate(90deg);
+        bottom: 19px;
+        right: -12px;
+        height: 20px;
+        z-index: 90;
+
+        @include desktop {
+            bottom: 29px;
+            right: -15px;
+            height: 26px;
+        }
+    }
+}

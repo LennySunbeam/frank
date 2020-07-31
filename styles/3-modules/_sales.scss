@@ -1,0 +1,420 @@
+/* Sales Plate */
+
+.sales {
+    background-color: $whiteish;
+    width: 100%;
+    height: 100%;
+    border: $lineTwo;
+    z-index: 1;
+    margin: 0 auto;
+    box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100%;
+    position: absolute;
+    top: calc(6px + 7vh);
+
+    @include desktop {
+        top: calc(14px + 7vh);
+    }
+}
+
+.hanger {
+    position: absolute;
+    background-color: transparent;
+    top: 10.5%;
+    left: calc(50% - 8vw);
+    width: 15.8vw;
+    height: 15.8vw;
+    border: solid 4px $redish;
+    transform: rotate(45deg);
+    box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+
+    @include desktop {
+        left: calc(50% - 3.05vw);
+        width: 5.8vw;
+        height: 5.8vw;
+    }
+
+    &__dot {
+        position: absolute;
+        top: calc(6px + 5vh);
+        left: calc(50% - 12px);
+        width: 20px;
+        height: 20px;
+        border: $lineOne;
+        border-radius: 100%;
+        background-color: $yellowish;
+        box-shadow: -3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+
+        @include desktop {
+            top: 7.5%;
+        }
+    }
+}
+
+
+/* Buy Two, Pay for Two - Sign */
+
+.buy__sign {
+    border: $lineTwo;
+    background-color: white;
+    padding: 0 1%;
+    position: absolute;
+    top: 8px;
+    left: -4px;
+    transform: rotate(-20deg);
+
+    @include desktop {
+        top: 2%;
+        left: -3%;
+    }
+}
+
+.paper__tape {
+
+    &--five {
+        width: 22%;
+        height: 15%;
+        top: 5px;
+        right: -12px;
+        transform: rotate(30deg);
+    }
+
+    &--six {
+        width: 22%;
+        height: 15%;
+        bottom: -4px;
+        left: -10px;
+        transform: rotate(30deg);
+    }
+}
+
+
+/* Buttons */
+
+.price {
+    border: $lineTwo;
+    position: absolute;
+    bottom: calc(21% + 4px);
+    left: 29%;
+    width: calc(34px + 2.8vw);
+    height: calc(12px + 3vh);
+    padding-top: 3.5%;
+
+    @include desktop {
+        width: calc(14px + 2.8vw);
+        height: calc(10px + 3vh);
+        bottom: calc(19% + 4px);
+        left: 30%;
+        padding-top: 3%;
+    }
+
+
+    &--redish {
+        background-color: $redish;
+        transform: skew(-1deg, -1deg) rotate(-1deg);
+        border-radius: 2px;
+    }
+
+    &--redish:hover {
+        bottom: calc(20.8% + 4px);
+
+        @include desktop {
+            bottom: calc(18.8% + 4px);
+        }
+    }
+
+    &--redish:active {
+        bottom: calc(19.9% + 4px);
+
+        @include desktop {
+            bottom: calc(17.9% + 4px);
+        }
+    }
+
+    &--dRedish {
+        background-color: $dRedish;
+        bottom: calc(19.5% + 4px);
+        left: 29%;
+        height: 20px;
+        width: calc(34px + 2.8vw);
+        transform: skew(0, 1deg);
+
+        @include desktop {
+            width: calc(14px + 2.8vw);
+            height: calc(10px + 3vh);
+            bottom: calc(17.5% + 4px);
+            left: 30%;
+        }
+    }
+}
+
+.size {
+    border: $lineTwo;
+    position: absolute;
+    bottom: calc(21% + 4px);
+    right: 29%;
+    width: calc(34px + 2.8vw);
+    height: calc(12px + 3vh);
+    padding-top: 3.5%;
+
+    @include desktop {
+        width: calc(14px + 2.8vw);
+        height: calc(10px + 3vh);
+        bottom: calc(19% + 4px);
+        right: 30%;
+        padding-top: 3%;
+    }
+
+
+    &--white {
+        background-color: white;
+        transform: skew(1deg, 1deg) rotate(1deg);
+        border-radius: 2px;
+    }
+
+    &--white:hover {
+        bottom: calc(20.8% + 4px);
+
+        @include desktop {
+            bottom: calc(18.8% + 4px);
+        }
+    }
+
+    &--white:active {
+        bottom: calc(19.9% + 4px);
+
+        @include desktop {
+            bottom: calc(17.9% + 4px);
+        }
+    }
+
+    &--greyish {
+        background-color: $greyish;
+        bottom: calc(19.5% + 4px);
+        right: 29%;
+        height: 20px;
+        width: calc(34px + 2.8vw);
+        transform: skew(0, 1deg);
+
+        @include desktop {
+            width: calc(14px + 2.8vw);
+            height: calc(10px + 3vh);
+            bottom: calc(17.5% + 4px);
+            right: 30%;
+        }
+    }
+
+    &--font {
+        text-decoration: underline;
+        color: $blackish;
+    }
+}
+
+.buy {
+    border: $lineTwo;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    height: calc(14px + 3vh);
+    padding-top: 1%;
+
+    @include desktop {
+        height: calc(12px + 3vh);
+        padding-top: 0;
+    }
+
+    &--green {
+        background-color: $greenish;
+        transform: skew(1deg, -1deg);
+        border-radius: 2px;
+    }
+
+    &--green:hover {
+        bottom: 9.8%;
+    }
+
+    &--green:active {
+        bottom: 8.8%;
+    }
+
+    &--dGreen {
+        background-color: $dGreenish;
+        bottom: 8.2%;
+        height: 20px;
+        width: 80%;
+        transform: skew(-0.3deg, 0);
+
+        @include desktop {
+            bottom: 8.3%;
+            transform: skew(1deg, 0)
+        }
+    }
+
+    &--story {
+        top: 10%;
+        bottom: auto;
+        background-color: $redish;
+        transform: skew(0, -0.5deg);
+        height: calc(16px + 4vh);
+
+        @include desktop {
+            top: 8%;
+            height: calc(20px + 4vh);
+        }
+
+        &--bottom {
+            top: calc(10% + 10px);
+            bottom: auto;
+            background-color: $dRedish;
+            transform: skew(0deg, 1deg);
+            height: calc(16px + 4vh);
+
+            @include desktop {
+                top: calc(13% + 10px);
+            }
+        }
+    }
+
+    &--story:hover {
+        top: 8.2%;
+    }
+
+    &--story:active {
+        top: 10.4%;
+    }
+
+
+    &--shop {
+        top: 32%;
+        bottom: auto;
+        transform: skew(0, 0.5deg);
+        height: calc(16px + 4vh);
+
+        @include desktop {
+            top: 30%;
+            height: calc(20px + 4vh);
+        }
+
+        &--bottom {
+            top: calc(32% + 10px);
+            bottom: auto;
+            background-color: $dGreenish;
+            transform: skew(0deg, -1deg);
+            height: calc(16px + 4vh);
+
+            @include desktop {
+                top: calc(35% + 10px);
+            }
+        }
+    }
+
+    &--shop:hover {
+        top: 32.2%;
+
+        @include desktop {
+            top: 30.2%;
+        }
+    }
+
+    &--shop:active {
+        top: 34.4%;
+
+        @include desktop {
+            top: 32.4%;
+        }
+    }
+
+    &--useless {
+        top: 54%;
+        left: 20%;
+        right: 20%;
+        bottom: auto;
+        background-color: white;
+        height: calc(16px + 4vh);
+        width: 60%;
+        padding: auto;
+
+        &--bottom {
+            top: calc(54% + 10px);
+            left: 20%;
+            right: 20%;
+            bottom: auto;
+            background-color: $greyish;
+            height: calc(16px + 4vh);
+            width: 60%;
+            padding: auto; 
+        }
+
+        &--font {
+            font-size: calc(10px + 0.5vw);
+            color: $blackish;
+            padding-top: calc(4px + 0.5vh)
+        }
+    }
+
+    &--useless:hover {
+        top: 54.2%;
+    }
+
+    &--useless:active {
+        top: 56.2%;
+    }
+}
+
+
+/* Wires */
+
+
+.wire__straight {
+    position: absolute;
+    left: calc(50% - 3px);
+    bottom: calc(3.5% + 4px);
+    background-color: $pinkish;
+    width: 6px;
+    height: 10%;
+    border: $lineOne;
+    border-radius: 10px;
+    box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+
+    @include desktop {
+        height: 8%;
+    }
+
+    &--left {
+        right: 60%;
+        left: 40%;
+        bottom: calc(12.3% + 4px);
+        transform: rotate(-50deg);
+
+        @include desktop {
+            bottom: calc(11.6% + 4px);
+        }
+    }
+
+    &--right {
+        left: 60%;
+        right: 40%;
+        bottom: calc(12.3% + 4px);
+        transform: rotate(40deg);
+
+        @include desktop {
+            bottom: calc(11.5% + 4px);
+        }
+    }
+}
+
+.wire__hole {
+    position: absolute;
+    left: calc(50% - 6px);
+    bottom: calc(3% + 4px);
+    background-color: $darkish;
+    width: 12px;
+    height: 12px;
+    border: $lineOne;
+    border-radius: 100%;
+}

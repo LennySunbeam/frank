@@ -1,0 +1,94 @@
+/* Background Lines */
+
+.backLine {
+    position: absolute;
+    border-radius: 1px;
+    width: 2px;
+    box-shadow: 2px 0 0 0 $blackish;
+    z-index: 0;
+
+    &__one {
+        height: 20px;
+        top: 4vh;
+        left: 10vw;
+    }
+
+    &__two {
+        height: 20px;
+        top: 8.5vh;
+        right: 30vw;
+    }
+
+    &__three {
+        height: 34px;
+        bottom: 1vh;
+        right: 14vw;
+    }
+
+    &__four {
+        height: 40px;
+        bottom: 14.5vh;
+        left: 30vw;
+    }
+}
+
+
+/* Background Plates */
+
+.plate {
+    background-color: $yellowish;
+    border: $lineOne;
+    position: absolute;
+    box-shadow: -1px 1px 0px 1px rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    z-index: 0;
+
+    &--one {
+        width: 28vw;
+        height: 38vh;
+        top: 3%;
+        left: 4.8%;
+    }
+
+    &--two {
+        width: 16vw;
+        height: 6vh;
+        top: 34%;
+        right: 5%;
+    }
+
+    &--three {
+        width: 30vw;
+        height: 17vh;
+        top: 80%;
+        left: 20%;
+    }
+
+    &__dot {
+        border-radius: 2px;
+        width: 0;
+        height: 0;
+        border: $lineTwo;
+        position: absolute;
+
+        &--one {
+            top: 3px;
+            left: 3px;
+        }
+
+        &--two {
+            top: 3px;
+            right: 3px;
+        }
+
+        &--three {
+            bottom: 3px;
+            left: 3px;
+        }
+
+        &--four {
+            bottom: 3px;
+            right: 3px;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+/* Opening Gate */
+
+.gate {
+    background-color: $greyish;
+    border: $lineTwo;
+    height: 100vh;
+    width: 100vw;
+    z-index: 98;
+    position: absolute;
+
+    animation: move 1.2s infinite 2s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    top: 0;
+
+    &__black {
+        width: 100%;
+        height: 9%;
+        background-color: transparent;
+        border: $lineTwo;
+        z-index: 92;
+        position: absolute;
+
+        &--one {
+            top: 10%;
+        }
+
+        &--two {
+            top: 20%;
+        }
+
+        &--three {
+            top: 30%;
+        }
+
+        &--four {
+            top: 40%;
+        }
+
+        &--five {
+            top: 50%;
+        }
+
+        &--six {
+            top: 60%;
+        }
+
+        &--seven {
+            top: 70%;
+        }
+
+        &--eight {
+            top: 80%;
+        }
+
+        &--nine {
+            top: 90%;
+        }
+    }
+
+    &__white {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+
+    &--frank {
+        margin: 25vh 20vw;
+        position: absolute;
+        z-index: 91;
+    }
+}
+
+@keyframes move {
+    1% {
+        transform: translateY(-0%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}

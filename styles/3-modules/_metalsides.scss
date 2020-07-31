@@ -1,0 +1,63 @@
+.metalside {
+    background-color: $redish;
+    border: $lineTwo;
+    position: fixed;
+    margin: 0;
+
+
+    &__top {
+        border-top: transparent;
+        width: calc(100vw + 4px);
+        height: 10px;
+        z-index: 100;
+        margin-left: -2px;
+    }
+
+    &__top--shadow {
+        border-top: transparent;
+        width: 100vw;
+        height: 10px;
+        box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.2);
+        z-index: 98;
+        margin-left: -2px;
+    }
+
+    &__left,
+    &__right {
+        width: 10px;
+        height: 101vh;
+        z-index: 99;
+        border-top: transparent;
+    }
+
+    &__left {
+        border-left: transparent;
+    }
+
+    &__right {
+        border-right: transparent;
+        right: 0px;
+    }
+
+    &__left--shadow,
+    &__right--shadow {
+        width: 10px;
+        height: 101vh;
+        z-index: 0;
+        border-top: transparent;
+    }
+
+    &__left--shadow {
+        border-left: transparent;
+        box-shadow: 5px 15px 0px 0px rgba(0, 0, 0, 0.2);
+        z-index: 98;
+    }
+
+    &__right--shadow {
+        border-right: transparent;
+        box-shadow: -5px 15px 0px 0px rgba(0, 0, 0, 0.2);
+        right: 0px;
+        z-index: 98;
+    }
+
+}

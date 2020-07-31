@@ -1,0 +1,406 @@
+/* Window */
+
+.window {
+    background-color: $yellowish;
+    border: $lineTwo;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    box-shadow: -5px 5px 0px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.glass {
+    background-color: $lBlueish;
+    border: $lineTwo;
+    /*opacity:0.3;*/
+    width: 100%;
+    height: 100%;
+}
+
+.lineSkew {
+    border: $lineOne;
+    border-radius: 34%;
+    width: 1px;
+    opacity: 0.3;
+    transform: skew(-30deg);
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    position: absolute;
+
+    @include desktop {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+    }
+
+    &__one {
+        height: 20px;
+        top: 12px;
+        left: 80%;
+        right: 20%;
+    }
+
+    &__two {
+        height: 24px;
+        top: 12px;
+        left: calc(80% + 2px);
+        right: 20%;
+    }
+
+    &__three {
+        height: 40px;
+        left: 30%;
+        bottom: 12px;
+    }
+
+    &__four {
+        height: 42px;
+        left: calc(30% - 3px);
+        bottom: 12px;
+    }
+}
+
+
+/* Electric Panel */
+
+.panel {
+    border: $lineTwo;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    z-index: 2;
+
+    @include desktop {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+    }
+
+    &__back {
+        background-color: $greyish;
+        width: 282px;
+        height: 14px;
+        margin: 0 auto 0 auto;
+    }
+
+    &__front {
+        background-color: $darkish;
+        width: 100px;
+        height: 20px;
+        margin: -6px auto 0 auto;
+        padding-top: 6px;
+    }
+}
+
+.front__line {
+    border: $lineTwo;
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    margin-top: -6px;
+
+    &--left {
+        right: 84%;
+        left: calc(51% - 0px);
+    }
+
+    &--middle {
+        right: 76%;
+        left: calc(51% + 7px);
+    }
+
+    &--right {
+        right: 69%;
+        left: calc(51% + 14px);
+    }
+}
+
+
+.panel__dot {
+    border: $lineTwo;
+    border-radius: 100%;
+    display: inline-block;
+    width: 2px;
+    margin: 3px;
+    position: absolute;
+
+    &--right {
+        right: 0px;
+    }
+}
+
+
+.light {
+    border: $lineTwo;
+    position: absolute;
+    box-shadow: -3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+    width: 14px;
+    height: 18px;
+    border-radius: 6px;
+
+    &--blue {
+        background-color: $blueish;
+        left: 36%;
+        right: 64%;
+    }
+
+    &--red {
+        animation: blinker 2s infinite;
+        background-color: $redish;
+        left: 42%;
+        right: 58%;
+        margin-top: 3px;
+    }
+
+    &--darkred {
+        background-color: $dRedish;
+        left: 42%;
+        right: 58%;
+        margin-top: 3px;
+    }
+}
+
+@keyframes blinker {
+    1% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.bulb {
+    border: 2px solid $yellowish;
+    background-color: $syellish;
+    position: absolute;
+    box-shadow: -3px 3px 0px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    width: 18px;
+    height: 24px;
+    left: calc(51% - 2px);
+    right: 49%;
+    margin-top: 7px;
+}
+
+.bulb__socket {
+    border: $lineTwo;
+    position: absolute;
+    box-shadow: -3px 2px 0px 0px rgba(0, 0, 0, 0.2);
+    width: 22px;
+    left: calc(51% - 4px);
+    right: 49%;
+    margin-top: 10px;
+    z-index: 3;
+}
+
+
+.bulb__line {
+    position: absolute;
+    box-shadow: -1px 1px 0px 0px rgba(0, 0, 0, 0.2);
+    right: 50%;
+
+    &--middle {
+        border: 1px solid $whiteish;
+        width: 8px;
+        top: 22px;
+        left: calc(50% + 6px);
+    }
+
+    &--left,
+    &--right {
+        border: $lineOne;
+        height: 10px;
+        top: 13px;
+    }
+
+    &--left {
+        left: calc(50% + 4px);
+        transform: skew(20deg);
+    }
+
+    &--right {
+        left: calc(50% + 14px);
+        transform: skew(-20deg);
+    }
+}
+
+/* Neon Sign */
+
+.neon {
+    text-align: center;
+    position: absolute;
+    right: 0;
+    margin: auto;
+
+    &__arrow--blur,
+    &__arrow--light,
+    &__arrow--dark {
+        font-size: 24px;
+        top: 2px;
+        left: 68px;
+    }
+
+    &__story--blur,
+    &__story--light,
+    &__story--dark {
+        top: -34px;
+        left: 0;
+    }
+
+    &__arrow--blur {
+        color: transparent;
+        text-shadow: 0px 0px 5px $pinkish,
+            0px 0px 10px $pinkish,
+            0px 0px 15px $pinkish,
+            0px 0px 20px $pinkish,
+            0px 0px 25px $pinkish;
+    }
+
+    &__story--blur {
+        color: transparent;
+
+        &--pinkish {
+            text-shadow: 0px 0px 5px $pinkish,
+                0px 0px 15px $pinkish,
+                0px 0px 25px $pinkish;
+        }
+
+        &--redish {
+            text-shadow: 0px 0px 5px $redish,
+                0px 0px 15px $redish,
+                0px 0px 25px $redish;
+        }
+    }
+
+    &__story--dark,
+    &__arrow--dark {
+        text-shadow: -3px 3px rgba(0, 0, 0, 0.1);
+
+        &--pinkish {
+            color: $pinkish;
+            -webkit-text-stroke: 1px $purpleish;
+        }
+
+        &--redish {
+            color: $redish;
+            -webkit-text-stroke: 1px $dRedish;
+        }
+    }
+
+    &__story--light,
+    &__arrow--light {
+        text-shadow: -3px 3px rgba(0, 0, 0, 0.1);
+
+        &--pinkish {
+            color: $whiteish;
+            -webkit-text-stroke: 1px $pinkish;
+        }
+
+        &--redish {
+            color: $whiteish;
+            -webkit-text-stroke: 1px $redish;
+        }
+    }
+
+    &__rotate {
+        transform: rotate(42.5deg);
+        z-index: 3;
+        margin: -13px auto auto 20px;
+    }
+}
+
+
+.flicker {
+    animation: flicker 20s infinite;
+}
+
+@keyframes flicker {
+    10% {
+        opacity: 1;
+    }
+
+    10.3% {
+        opacity: 0;
+    }
+
+    10.4% {
+        opacity: 0.5;
+    }
+
+    10.5% {
+        opacity: 0;
+    }
+
+    10.6% {
+        opacity: 1;
+    }
+
+    32.1% {
+        opacity: 1;
+    }
+
+    32.2% {
+        opacity: 0;
+    }
+
+    32.3% {
+        opacity: 1;
+    }
+
+    32.4% {
+        opacity: 1;
+    }
+
+    32.5% {
+        opacity: 0;
+    }
+
+    32.6% {
+        opacity: 1;
+    }
+
+    72% {
+        opacity: 1;
+    }
+
+    72.2% {
+        opacity: 0;
+    }
+
+    72.3% {
+        opacity: 1;
+    }
+
+    72.4% {
+        opacity: 0;
+    }
+
+    72.5% {
+        opacity: 1;
+    }
+
+    72.6% {
+        opacity: 0;
+    }
+
+    82.5% {
+        opacity: 0;
+    }
+
+    82.6% {
+        opacity: 1;
+    }
+
+    82.7% {
+        opacity: 0;
+    }
+
+    82.8% {
+        opacity: 1;
+    }
+}

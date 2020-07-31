@@ -1,0 +1,191 @@
+/* Monitor */
+
+.monitor {
+    margin-bottom: 18%;
+
+    @include desktop {
+        margin: 10% 0 34% 0;
+    }
+
+    &__outer {
+        background-color: $greyish;
+        width: 100%;
+        height: 100%;
+        border: $lineTwo;
+        border-radius: 26px;
+        padding: 5px;
+        position: absolute;
+        margin: 0;
+        box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    &--shine {
+        border-bottom: 1px solid white;
+        border-left: 1px solid white;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__inner {
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        border: $lineTwo;
+        border-radius: 20px;
+        padding: 5vh 0.5vw 6vh 1vw;
+
+        @include desktop {
+            padding: 3vw 0.5vw 6vh 1vw;
+        }
+    }
+
+    &__plate {
+        background-color: $darkish;
+        width: 100px;
+        height: 10px;
+        border: $lineTwo;
+        border-radius: 4px;
+        position: absolute;
+        top: -7px;
+        right: 0;
+        left: 0;
+        margin: auto;
+
+        @include desktop {
+            right: calc(50% - 50px);
+            left: calc(50% - 50px);
+        }
+
+        &--shine {
+            border-top: 1px solid rgba(255, 0, 73, 0.25);
+            height: 100%;
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+
+    &__wire--outer {
+        position: absolute;
+        background-color: $redish;
+        border: $lineOne;
+        border-radius: 100%;
+        padding: 3px;
+        width: 50px;
+        height: 50px;
+        top: -6px;
+        right: 50%;
+        left: calc(50% - 76px);
+        z-index: -1;
+        
+        @include desktop {
+            left: calc(50% - 78px);
+        }
+    }
+
+    &__wire--inner {
+        background-color: $yellowish;
+        border: $lineOne;
+        border-radius: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
+    &--font--small {
+        font-size: calc(8px + 0.5vw);
+        line-height: 0;
+
+        @include desktop {
+            font-size: calc(4px + 0.5vw);
+        }
+    }
+}
+
+.trapezoid {
+    &__outer {
+        position: absolute;
+        top: -16px;
+        right: 50vw;
+        left: calc(50vw + 55px);
+        width: 22px;
+        height: 0;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-bottom: 18px solid $blackish;
+
+        @include desktop {
+            right: 50%;
+            left: calc(50% + 55px);
+        }
+    }
+
+    &__inner {
+        padding: 2px;
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 16px;
+        height: 100%;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-bottom: 14px solid $redish;
+    }
+}
+
+
+/* Social Buttons */
+
+.button {
+
+    &--social {
+        position: absolute;
+        border: $lineTwo;
+        box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+
+        &--left {
+            left: 20%;
+            bottom: -90px;
+        }
+
+        &--right {
+            right: 20%;
+            bottom: -90px;
+        }
+    }
+}
+
+.button__tube {
+    background-color: $greyish;
+    border: $lineTwo;
+    border-radius: 10px;
+    position: absolute;
+    width: 10px;
+    height: 40px;
+
+
+    &--left {
+        left: calc(20% + 26px);
+
+        &--top {
+            bottom: -12px;
+        }
+
+        &--bottom {
+            bottom: -32px;
+            box-shadow: -4px -2px 0px 0px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &--right {
+        right: calc(20% + 26px);
+
+        &--top {
+            bottom: -12px;
+        }
+
+        &--bottom {
+            bottom: -32px;
+            box-shadow: -4px -2px 0px 0px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

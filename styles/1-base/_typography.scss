@@ -1,0 +1,77 @@
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18vw;
+    font-weight: 700;
+    color: $redish;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $blackish;
+    text-align: left;
+    line-height: 0.4;
+    text-align: center;
+
+    @include desktop {
+        font-size: calc(2em + 4.8vw);
+        line-height: 0;
+        margin-top: 8vh;
+        margin-left: -15px;
+    }
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: calc(14px + 1vw);
+    font-weight: 700;
+    color: $redish;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $blackish;
+    text-align: left;
+    line-height: 0.4;
+    text-align: center;
+    line-height: 1.2;
+    margin: 3% 0;
+
+    @include desktop {
+        font-size: calc(6px + 1.3vw);
+    }
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+
+    
+}
+
+h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: calc(10px + 1.2vh);
+    font-weight: 700;
+    color: white;
+    line-height: 0;
+    text-align: center;
+    margin-top: 5%;
+
+    @include desktop {
+        font-size: calc(10px + 1.5vh);
+    }
+}
+
+h6 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 5.1vw;
+    color: $redish;
+    line-height: 1.5;
+    margin: 1vh 3vw 5vh 5vw;
+
+    @include desktop {
+        font-size: calc(10px + 1.1vw);
+        margin: 0 0 8vh 0;
+        margin: 0vh 1vw 3vh 1vw;
+    }
+}
