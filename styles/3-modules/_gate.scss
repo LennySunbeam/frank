@@ -1,12 +1,13 @@
 /* Opening Gate */
 
 .gate {
-    background-color: $greyish;
+    background-color: $whiteish;
     border: $lineTwo;
     height: 100vh;
     width: 100vw;
     z-index: 98;
-    position: absolute;
+    position: fixed;
+    top:0;
 
     animation: move 1.2s infinite 2s ease-in-out;
     animation-iteration-count: 1;
@@ -18,7 +19,7 @@
         height: 9%;
         background-color: transparent;
         border: $lineTwo;
-        z-index: 92;
+        z-index: 100;
         position: absolute;
 
         &--one {
@@ -68,7 +69,7 @@
     &--frank {
         margin: 25vh 20vw;
         position: absolute;
-        z-index: 91;
+        z-index: 100;
     }
 }
 

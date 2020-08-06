@@ -10,16 +10,6 @@
     box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
-img {
-    width: 100%;
-    position: absolute;
-    top: calc(6px + 7vh);
-
-    @include desktop {
-        top: calc(14px + 7vh);
-    }
-}
-
 .hanger {
     position: absolute;
     background-color: transparent;
@@ -27,7 +17,7 @@ img {
     left: calc(50% - 8vw);
     width: 15.8vw;
     height: 15.8vw;
-    border: solid 4px $redish;
+    border: solid 4px $pinkish;
     transform: rotate(45deg);
     box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.2);
 
@@ -97,45 +87,44 @@ img {
 .price {
     border: $lineTwo;
     position: absolute;
-    bottom: calc(21% + 4px);
-    left: 29%;
-    width: calc(34px + 2.8vw);
+    bottom: calc(14.5% + 4px);
+    left: 23%;
+    width: calc(34px + 2.9vw);
     height: calc(12px + 3vh);
     padding-top: 3.5%;
 
     @include desktop {
         width: calc(14px + 2.8vw);
         height: calc(10px + 3vh);
-        bottom: calc(19% + 4px);
-        left: 30%;
-        padding-top: 3%;
+        bottom: calc(15% + 2px);
+        left: calc(1px + 25.9%);
+        padding: 0;
     }
-
 
     &--redish {
-        background-color: $redish;
-        transform: skew(-1deg, -1deg) rotate(-1deg);
+        position: absolute;
+        background-color: $greyish;
+        border: $lineTwo;
         border-radius: 2px;
-    }
-
-    &--redish:hover {
-        bottom: calc(20.8% + 4px);
-
+        bottom: calc(19.5% + 4px);
+        left: 29%;
+        height: 20px;
+        width: calc(34px + 2.8vw);
+        transform: skew(0, 1deg);
+        
+        z-index: -1;
+    
         @include desktop {
-            bottom: calc(18.8% + 4px);
-        }
+            width: calc(14px + 2.8vw);
+            height: calc(10px + 3vh);
+            bottom: calc(17.5% + 4px);
+            left: 30%;
+    }
     }
 
-    &--redish:active {
-        bottom: calc(19.9% + 4px);
-
-        @include desktop {
-            bottom: calc(17.9% + 4px);
-        }
-    }
 
     &--dRedish {
-        background-color: $dRedish;
+        background-color: $greyish;
         bottom: calc(19.5% + 4px);
         left: 29%;
         height: 20px;
@@ -155,8 +144,8 @@ img {
     border: $lineTwo;
     position: absolute;
     bottom: calc(21% + 4px);
-    right: 29%;
-    width: calc(34px + 2.8vw);
+    right: 24%;
+    width: calc(34px + 8vw);
     height: calc(12px + 3vh);
     padding-top: 3.5%;
 
@@ -170,7 +159,7 @@ img {
 
 
     &--white {
-        background-color: white;
+        background-color: $blueish;
         transform: skew(1deg, 1deg) rotate(1deg);
         border-radius: 2px;
     }
@@ -192,15 +181,15 @@ img {
     }
 
     &--greyish {
-        background-color: $greyish;
+        background-color: $dBlueish;
         bottom: calc(19.5% + 4px);
-        right: 29%;
         height: 20px;
-        width: calc(34px + 2.8vw);
+        right: calc(24% + 1px);
+        width: calc(33px + 8vw);
         transform: skew(0, 1deg);
 
         @include desktop {
-            width: calc(14px + 2.8vw);
+            width: calc(20px + 3.2vw);
             height: calc(10px + 3vh);
             bottom: calc(17.5% + 4px);
             right: 30%;
@@ -221,11 +210,12 @@ img {
     right: 10%;
     width: 80%;
     height: calc(14px + 3vh);
-    padding-top: 1%;
+    padding: 1% 0 0 0;
+    text-align: center;
 
     @include desktop {
         height: calc(12px + 3vh);
-        padding-top: 0;
+        
     }
 
     &--green {
@@ -258,7 +248,7 @@ img {
     &--story {
         top: 10%;
         bottom: auto;
-        background-color: $redish;
+        background-color: $blueish;
         transform: skew(0, -0.5deg);
         height: calc(16px + 4vh);
 
@@ -270,7 +260,7 @@ img {
         &--bottom {
             top: calc(10% + 10px);
             bottom: auto;
-            background-color: $dRedish;
+            background-color: $dBlueish;
             transform: skew(0deg, 1deg);
             height: calc(16px + 4vh);
 

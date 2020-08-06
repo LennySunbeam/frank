@@ -1,5 +1,5 @@
 .metalside {
-    background-color: $redish;
+    background-color: $greyish;
     border: $lineTwo;
     position: fixed;
     margin: 0;
@@ -26,7 +26,7 @@
     &__right {
         width: 10px;
         height: 101vh;
-        z-index: 99;
+        z-index: 101;
         border-top: transparent;
     }
 

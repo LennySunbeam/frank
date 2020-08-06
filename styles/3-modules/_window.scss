@@ -65,7 +65,7 @@
 
 /* Electric Panel */
 
-.panel {
+.electric {
     border: $lineTwo;
     display: inline-block;
     position: absolute;
@@ -120,7 +120,7 @@
 }
 
 
-.panel__dot {
+.electric__dot {
     border: $lineTwo;
     border-radius: 100%;
     display: inline-block;
@@ -254,20 +254,20 @@
 
     &__arrow--blur {
         color: transparent;
-        text-shadow: 0px 0px 5px $pinkish,
-            0px 0px 10px $pinkish,
-            0px 0px 15px $pinkish,
-            0px 0px 20px $pinkish,
-            0px 0px 25px $pinkish;
+        text-shadow: 0px 0px 5px $redish,
+            0px 0px 10px $redish,
+            0px 0px 15px $redish,
+            0px 0px 20px $redish,
+            0px 0px 25px $redish;
     }
 
     &__story--blur {
         color: transparent;
 
         &--pinkish {
-            text-shadow: 0px 0px 5px $pinkish,
-                0px 0px 15px $pinkish,
-                0px 0px 25px $pinkish;
+            text-shadow: 0px 0px 5px $redish,
+                0px 0px 15px $redish,
+                0px 0px 25px $redish;
         }
 
         &--redish {
@@ -282,8 +282,8 @@
         text-shadow: -3px 3px rgba(0, 0, 0, 0.1);
 
         &--pinkish {
-            color: $pinkish;
-            -webkit-text-stroke: 1px $purpleish;
+            color: $redish;
+            -webkit-text-stroke: 1px $dRedish;
         }
 
         &--redish {
@@ -298,7 +298,7 @@
 
         &--pinkish {
             color: $whiteish;
-            -webkit-text-stroke: 1px $pinkish;
+            -webkit-text-stroke: 1px $redish;
         }
 
         &--redish {

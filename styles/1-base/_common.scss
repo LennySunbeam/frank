@@ -5,7 +5,7 @@
 }
 
 html {
-    background-color: $redish;
+    background-color: $greyish;
     Overflow-x: hidden; //horizontal
 }
 
@@ -13,29 +13,34 @@ html {
 body {
     margin: 0;
     background-color: $whiteish;
+    min-height: 100vh;
 }
 
 /* Chrome Scrollbar */
 
 ::-webkit-scrollbar {
     width: 10px;
-    background: $redish;
+    background: $greyish;
 }
 
     /* Track */
 ::-webkit-scrollbar-track {
-    background: $redish;
+    background: $greyish;
     box-shadow: inset 0 0 5px transparent;
     border-radius: 10px;
 }
 
     /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: $dRedish;
+    background: $darkish;
     border-radius: 10px;
 }
 
     /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: $blackish;
+}
+
+a:hover {
+    cursor: pointer;
 }

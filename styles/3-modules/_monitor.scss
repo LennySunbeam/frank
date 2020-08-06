@@ -135,7 +135,7 @@
 
 /* Social Buttons */
 
-.button {
+.navbutton {
 
     &--social {
         position: absolute;
@@ -154,7 +154,7 @@
     }
 }
 
-.button__tube {
+.navbutton__tube {
     background-color: $greyish;
     border: $lineTwo;
     border-radius: 10px;

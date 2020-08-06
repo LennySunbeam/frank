@@ -58,7 +58,7 @@
 
             <div class="hanger"></div>
             <div class="hanger__dot"></div>
-            <img src="img/t-shirt.png" alt="">
+            <!--<img src="img/t-shirt.png" alt="">-->
 
 
             <div class="buy__sign">
@@ -73,27 +73,29 @@
             <div class="wire__straight wire__straight--right"></div>
             <div class="wire__straight"></div>
 
-            <div class="size size--greyish"></div>
+            <div class="size size--greyish"></div><!--
             <div class="size size--white">
                 <h4 class="size--font">M</h4>
-            </div>
+            </div>-->
 
             <div class="price price--dRedish"></div>
-            <div class="price price--redish">
-                <h4>30€</h4>
+            <div class="price--redish">
+                
             </div>
 
-            <div class="buy buy--dGreen"></div>
+            <div class="buy buy--dGreen"></div><!--
             <div class="buy buy--green">
                 <h4>Buy Frank's T-Shirt</h4>
-            </div>
+            </div>-->
+
+            <?php echo do_shortcode('[product_page id="8"]');?>
 
         </div>
 
         <div class="monitor">
 
-            <div class="button--social button__outer button--social--left">
-                <div class="button__inner">
+            <div class="navbutton--social navbutton__outer navbutton--social--left">
+                <div class="navbutton__inner">
                     <svg id="facebook" alt="Facebook" title="Facebook" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 138.9 138.9">
                         <path
@@ -102,12 +104,12 @@
                 </div>
             </div>
 
-            <div class="button__tube button__tube--left button__tube--left--bottom"></div>
-            <div class="button__tube button__tube--left button__tube--left--top"></div>
+            <div class="navbutton__tube navbutton__tube--left navbutton__tube--left--bottom"></div>
+            <div class="navbutton__tube navbutton__tube--left navbutton__tube--left--top"></div>
 
 
-            <div class="button--social button__outer button--social--right">
-                <div class="button__inner">
+            <div class="navbutton--social navbutton__outer navbutton--social--right">
+                <div class="navbutton__inner">
                     <svg id="instagram" alt="Instagram" title="Instagram" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 138.9 138.9">
                         <path
@@ -120,8 +122,8 @@
                 </div>
             </div>
 
-            <div class="button__tube button__tube--right button__tube--right--bottom"></div>
-            <div class="button__tube button__tube--right button__tube--right--top"></div>
+            <div class="navbutton__tube navbutton__tube--right navbutton__tube--right--bottom"></div>
+            <div class="navbutton__tube navbutton__tube--right navbutton__tube--right--top"></div>
 
 
             <h3 class="neon neon__story--blur neon__story--blur--redish">SHOP</h3>
@@ -175,7 +177,7 @@
 
             <div class="hanger"></div>
             <div class="hanger__dot"></div>
-            <img src="img/t-shirt.png" alt="">
+            <!--<img src="img/t-shirt.png" alt="">-->
 
 
 
@@ -184,20 +186,23 @@
             <div class="wire__straight wire__straight--right"></div>
             <div class="wire__straight"></div>
 
-            <div class="size size--greyish"></div>
+            <div class="size size--greyish"></div><!--
             <div class="size size--white">
                 <h4 class="size--font">M</h4>
-            </div>
+            </div>-->
 
             <div class="price price--dRedish"></div>
-            <div class="price price--redish">
-                <h4>30€</h4>
+            <div class="price--redish">
+                
             </div>
 
-            <div class="buy buy--dGreen"></div>
+            <div class="buy buy--dGreen"></div><!--
             <div class="buy buy--green">
                 <h4>Buy Frank's T-Shirt</h4>
-            </div>
+            </div>-->
+
+            <?php echo do_shortcode('[product_page id="5"]');?>
+
 
         </div>
 

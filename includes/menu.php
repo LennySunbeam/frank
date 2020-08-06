@@ -26,12 +26,12 @@
             <div class="screw__line screw__line--four"></div>
         </div>
 
-        <!-- Menu: SpeakerBox: Social Buttons -->
+        <!-- Menu: SpeakerBox: Social navbuttons -->
 
-        <div class="button__tube button__tube--top"></div>
+        <div class="navbutton__tube navbutton__tube--top"></div>
 
-        <div class="button--social button__outer button--social--menu--top">
-            <div class="button__inner">
+        <div class="navbutton--social navbutton__outer navbutton--social--menu--top">
+            <div class="navbutton__inner">
                 <svg id="facebook" alt="Facebook" title="Facebook" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 138.9 138.9">
                     <path
@@ -41,10 +41,10 @@
         </div>
 
         
-        <div class="button__tube button__tube--bottom"></div>
+        <div class="navbutton__tube navbutton__tube--bottom"></div>
 
-        <div class="button--social button__outer button--social--menu--bottom">
-            <div class="button__inner">
+        <div class="navbutton--social navbutton__outer navbutton--social--menu--bottom">
+            <div class="navbutton__inner">
                 <svg id="instagram" alt="Instagram" title="Instagram" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 138.9 138.9">
                     <path
@@ -65,7 +65,7 @@
 
     </div>
 
-    <!-- Menu: Button Platform -->
+    <!-- Menu: navbutton Platform -->
 
     <div class="menu__pole--Two"></div>
     <div class="menu__platform">
@@ -87,21 +87,21 @@
             <div class="screw__line screw__line--four"></div>
         </div>
 
-        <a class="menuCheckbutton">
+        <a class="menuChecknavbutton">
             <div class="buy buy--story--bottom"></div>
             <div class="buy buy--story">
                 <h4>The Story</h4>
             </div>
         </a>
 
-        <a class="menuCheckbutton" href="#webshop">
+        <a class="menuChecknavbutton" href="#webshop">
             <div class="buy buy--shop--bottom"></div>
             <div class="parent buy buy--shop buy--green">
                 <h4>Frank's Shop</h4>
             </div>
         </a>
 
-        <a class="menuCheckbutton">
+        <a class="menuChecknavbutton">
             <div class="buy buy--useless--bottom"></div>
             <div class="buy buy--useless">
                 <h4 class="buy--useless--font">Useless Information</h4>

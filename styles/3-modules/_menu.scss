@@ -32,7 +32,7 @@ input[type="checkbox"]:checked~.menuBlack {
 }
 
 input[type="checkbox"]:checked~label .bar {
-    background-color: $redish;
+    background-color: $blueish;
 }
 
 input[type="checkbox"]:checked~label .top {
@@ -63,7 +63,7 @@ label {
     background-color: transparent;
     cursor: pointer;
     margin: 10px;
-    z-index: 100;
+    z-index: 98;
     position: fixed;
     transform: rotate(-1deg);
 }
@@ -72,7 +72,7 @@ label {
 
 .bar {
     display: block;
-    background-color: $redish;
+    background-color: $blueish;
     width: 34px;
     height: 5px;
     border-radius: 5px;
@@ -162,7 +162,7 @@ label {
 
 /* Social Buttons */
 
-.button {
+.navbutton {
 
     &--social {
 
@@ -190,7 +190,7 @@ label {
 
 
 
-.button__tube {
+.navbutton__tube {
 
     &--top {
         transform: rotate(90deg);

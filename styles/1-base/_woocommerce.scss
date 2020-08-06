@@ -1,0 +1,188 @@
+.product_meta, .reset_variations, .additional_information_tab, .description_tab, .input-text, .qty, .text, .product_title, .woocommerce-product-gallery__trigger, .screen-reader-text, .woocommerce-product-attributes-item__label, .woocommerce-product-attributes-item__value  {
+    display: none !important;
+}
+
+.quantity {
+    display: none;
+}
+
+#quantity_5f25976503101, #quantity_5f29de050b554 {
+    display: none;
+
+}
+
+.wp-post-image {
+    
+    width: 80vw;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: calc(6px + 7vh);
+    left: 0;
+    right: 0;
+
+    @include desktop {
+        width: calc(60px + 22vw);
+        height: auto;
+        max-width: 45vh;
+        margin: 0 auto;
+        top: calc(14px + 7vh);
+    }
+}
+
+
+.single_add_to_cart_button {
+    border: $lineTwo;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    height: calc(12px + 3vh);
+    padding-top: 0;
+    background-color: $greenish;
+    transform: skew(1deg, -1deg);
+    border-radius: 2px;
+    
+    font-family: 'Raleway', sans-serif;
+    font-size: calc(10px + 2.2vw);
+    font-weight: 700;
+    color: white;
+    line-height: 0;
+    padding: 0 0 0 0;
+    text-align: center;
+    
+    
+
+    @include desktop {
+        font-size: calc(10px + 1.1vw);
+    }
+}
+
+
+#size {
+    border: $lineTwo;
+    position: absolute;
+    bottom: calc(21% + 4px);
+    right: 24%;
+    width: calc(34px + 8vw);
+    height: calc(12px + 3vh);
+    
+    font-family: 'Raleway', sans-serif;
+    font-size: calc(10px + 2.2vw);
+    font-weight: 700;
+    color: $whiteish;
+    line-height: 0;
+    padding: 1% 0 0 0;
+    background-color: $blueish;
+
+    
+
+    @include desktop {
+        font-size: calc(4px + 1.1vw);
+        width: calc(20px + 3.2vw);
+        height: calc(10px + 3vh);
+        bottom: calc(19% + 4px);
+        right: 30%;
+        text-align: center;
+    }
+}
+
+.woocommerce-Price-amount, .amount {
+    
+    font-family: 'Raleway', sans-serif;
+    font-size: calc(10px + 2.2vw);
+    font-weight: 700;
+    color: $blackish;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+
+    @include desktop {
+        font-size: calc(4px + 1.1vw);
+        left: 10%;
+    }
+}
+
+.price {
+    background-color: white;
+    transform: skew(-1deg, -1deg) rotate(-1deg);
+    border-radius: 2px;
+}
+
+select {
+    appearance: button;
+    height: 100px;
+    
+}
+
+
+/* Woo Checkout */
+
+.woo__background {
+    background: $whiteish;
+    position: relative;
+    padding: 4vh 6vw;
+
+    @include desktop {
+        padding: 4vh 10vw 8vh 10vw;
+    }
+}
+
+.woo__platform {
+    position: absolute;
+    border: $lineTwo;
+    background-color: $greyish;
+    width: 88vw;
+    padding: 15px;
+
+    @include desktop {
+        width: 80vw;
+    }
+}
+
+.woocommerce-billing-fields {
+    display: inline-block;
+    width: 100%;
+}
+
+#select2-billing_country-container {
+    border: $lineTwo !important; 
+    border-radius: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: calc(10px + 1.2vh);
+    font-weight: 700;
+    color: $blackish !important;
+    line-height: 0;
+    appearance: button;
+    padding: 2.5% 0 0 0;
+    width: 100%;
+    height: 100%;
+}
+
+.input-text {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    border: $lineTwo !important; 
+}
+
+#order_comments_field {
+    height: 100px;
+    width: 100px;
+}
+
+#order_comments {
+    border: $lineTwo !important; 
+    border-radius: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: calc(10px + 1.2vh);
+    font-weight: 700;
+    color: $blackish !important;
+    line-height: 0;
+    margin: 0px -195.703px 0px 0px; 
+    height: 68px; 
+    width: 392px;
+}
